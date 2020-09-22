@@ -9,5 +9,3 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const root = document.getElementById("root");
     ReactDOM.render(<h1>Ooify</h1>, root);
 })
-
-//this is a comment
