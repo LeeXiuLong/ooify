@@ -14,13 +14,76 @@ class SignupForm extends React.Component{
             day: "",
             gender: "",
             confirmEmail: "",
+            emailError:"",
+            confirmEmailError:"",
+            passwordError: "",
+            nameError:"",
+            monthError: "",
+            dayError:"",
+            yearError:"",
+
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         
     }
 
     handleChange(type){
-        return e => this.setState({ [type]: e.currentTarget.value })
+        return e => {
+            let d = new Date();
+            let currentValue = e.currentTarget.value;
+            if(type === "email"){
+                if (currentValue.length === 0) {
+                    this.setState({ emailError: "You need to enter your email." })
+                } else if (!currentValue.includes("@")) {
+                    this.setState({ emailError: "This email is invalid. Make sure it's written like example@email.com" })
+                } else {
+                    this.setState({ emailError: "" })
+                }
+            } else if (type === "confirmEmail"){
+                if (currentValue.length === 0) {
+                    this.setState({ confirmEmailError: "You need to confirm your email." })
+                } else if (currentValue !== this.state.email) {
+                    this.setState({ confirmEmailError: "The email addresses don't match." })
+                } else {
+                    this.setState({ confirmEmailError: ""})
+                }
+            } else if (type === "password"){
+                if (currentValue.length === 0) {
+                    this.setState({ passwordError: "You need to enter a password." })
+                } else if (currentValue.length < 6) {
+                    this.setState({ passwordError: "Your password is too short." })
+                } else{
+                    this.setState({ passwordError: "" })
+                }
+            } else if (type === "name"){
+                if (currentValue.length === 0) {
+                    this.setState({ nameError: "Enter a name for your profile." })
+                }else{
+                    this.setState({ nameError: "" })
+                }
+            } else if (type === "month"){
+                if (currentValue === 0) {
+                    this.setState({ monthError: "Select your birth month." })
+                }else{
+                    this.setState({ monthError: "" })
+                }
+            } else if (type === "day"){
+                if (currentValue.length === 0 || !parseInt(currentValue)) {
+                    this.setState({ dayError: "Enter a valid day of the month." })
+                }else{
+                    this.setState({ dayError: "" })
+                }
+            } else if (type === "year"){
+                if (currentValue.length < 4 || parseInt(currentValue) < 1900 || !parseInt(currentValue)) {
+                    this.setState({ yearError: "Enter a valid year." })
+                } else if (d.getFullYear() - parseInt(currentValue) < 13) {
+                    this.setState({ yearError: "Sorry, you don't meet Spotify's age requirements." })
+                } else{
+                    this.setState({ yearError: "" })
+                }
+            }    
+            return this.setState({ [type]: e.currentTarget.value })
+        }
     }
 
     handleSubmit(e){
@@ -56,7 +119,11 @@ class SignupForm extends React.Component{
                             value={this.state.email}
                             onChange={this.handleChange("email")}
                         />
+                        <br/>
+                        <br/>
+                        {this.state.emailError}
                         {errorItems[1]}
+                        <br/>
                     </label>
                     <br/>
                     <label>
@@ -69,6 +136,9 @@ class SignupForm extends React.Component{
                         />
                     </label>
                     <br/>
+                    <br/>
+                    {this.state.confirmEmailError}
+                    <br/>
                     <label>
                         Create a password
                         <br/>
@@ -77,7 +147,11 @@ class SignupForm extends React.Component{
                             value={this.state.password}
                             onChange={this.handleChange("password")}
                         />
+                        <br />
+                        <br />
+                        {this.state.passwordError}
                         {errorItems[2]}
+                        <br/>
                     </label>
                     <br/>
                     <label>
@@ -89,11 +163,15 @@ class SignupForm extends React.Component{
                             onChange={this.handleChange("name")}
                         />
                     </label>
+                    <br />
+                    <br />
+                    {this.state.nameError}
                     {errorItems[0]}
                     <br/>
                     <label>
                         Month
                         <select name="month" onChange={this.handleChange("month")}>
+                            <option value="0" disabled selected>Month</option>
                             <option value="1">January</option>
                             <option value="2">February</option>
                             <option value="3">March</option>
@@ -126,20 +204,30 @@ class SignupForm extends React.Component{
                             maxLength="4"
                         />
                     </label>
+                    <br />
+                    <br />
+                    {this.state.monthError}
+                    <br/>
+                    {this.state.dayError}
+                    <br/>
+                    {this.state.yearError}
                     {errorItems[3]}
                     <br/>
                     <label>
                         What's your gender?
+                        <br/>
                         <label>Male
-                            <input type="radio" value="M"/>
+                            <input type="radio" value="M" name="genderAnswer"/>
                         </label>
                         <label>Female
-                            <input type="radio" value="F" />
+                            <input type="radio" value="F" name="genderAnswer"/>
                         </label>
                         <label>Non-binary
-                            <input type="radio" value="NB" />
+                            <input type="radio" value="NB" name="genderAnswer"/>
                         </label>
                     </label>
+                    <br />
+                    <br />
                     {errorItems[4]}
                     <br/>
                     <button type="submit">SIGN UP</button>
