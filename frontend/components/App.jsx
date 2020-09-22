@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
-import NavBar from './NavBar';
+import { Route } from 'react-router-dom';
 import StillWorking from './still_working';
+import SplashPage from './splash/splash_page'
 
 const App = () => {
     return (
         <div>
-            <NavBar />
             <Route path="/stillWorking" component={StillWorking}/>
+            <Route exact path ="/" component={SplashPage}/>
         </div>
     )
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SplashAuthContainer from './splashAuth/splash_auth_container'
+import SplashAuthContainer from '../splashAuth/splash_auth_container'
 
-class NavBar extends React.Component{
+class SplashNavBar extends React.Component{
     constructor(props){
         super(props)
     }
@@ -20,4 +20,4 @@ class NavBar extends React.Component{
     }
 }
 
-export default NavBar
+export default SplashNavBar;
