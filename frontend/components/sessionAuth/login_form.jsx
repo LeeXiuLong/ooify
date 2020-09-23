@@ -11,6 +11,7 @@ class LoginForm extends React.Component{
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
     handleChange(type){
@@ -23,44 +24,59 @@ class LoginForm extends React.Component{
             .then(()=> this.props.history.push("/"))
     }
 
+    handleDemoSubmit(e){
+        e.preventDefault();
+        let demoUser = {
+            email: "brewner@brewner.com",
+            password: "password"
+        }
+        this.props.processForm(demoUser)
+            .then(()=> this.props.history.push("/"))
+    }
+
     render(){
         let errorItems = this.props.errors.map(error=>{
-        return <li>{error}</li>
+        return <li className="errorLogin">{error}</li>
         })
         return(
-            <div>
-                <h1>Ooify</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <p>To continue, log in to Ooify.</p>
+            <div className = "loginForm">
+                <div className="header">
+                    <h1>Ooify</h1>
+                </div>
+                <hr/>
+                <form className="actualForm" onSubmit={this.handleSubmit}>
+                    <p className="topFormParagraph">To continue, log in to Ooify.</p>
                     <ul>
                         {errorItems}
                     </ul>
+                    <button className="demoUserButton" onClick={this.handleDemoSubmit}>CONTINUE AS DEMO USER</button>
+                    <h5 className="formSeperator">
+                        <span>
+                            OR
+                        </span>
+                    </h5>
                     <label>
-                        Email address or username
-                        <br/>
+                        <p className="inputLabel">Email address or username</p>
                         <input 
                             type="text"
                             value={this.state.email}
                             onChange={this.handleChange("email")}
                         />
                     </label>
-                    <br/>
                     <label>
-                        Password
-                        <br/>
+                        <p className="inputLabel">Password</p>
                         <input 
                             type="password"
                             value={this.state.password}
                             onChange={this.handleChange("password")}
                         />
                     </label>
-                    <br/>
-                    <a href="/login">Forgot your password?</a>
-                    <br/>
-                    <button type="submit">LOG IN</button>
+                    <a className="forgotPassword" href="/login">Forgot your password?</a>
+                    <button className="submitButton" type="submit">LOG IN</button>
                 </form>
-                <p>Don't have an account?</p>
-                <Link to="/signup">SIGN UP FOR OOIFY</Link>
+                <hr className="endOfForm"/>
+                <p className="dontHaveAccount">Don't have an account?</p>
+                <Link className="signupRedirect" to="/signup">SIGN UP FOR OOIFY</Link>
             </div>
         )
     }

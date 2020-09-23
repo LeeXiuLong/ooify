@@ -13,31 +13,42 @@ class SplashPage extends React.Component{
                 <header>
                     <SplashNavBar />
                 </header>
-                <div class="footer">
+                <div className="mainSplash">
+                    <h1>Listening is everything.
+                        <p>Millions of songs and podcasts. No credit card needed.</p>
+                        <button>Open Web Player</button>
+                    </h1>
+                    
+                    
+                    
+                </div>
+                <div class="splashFooter">
                     <p>Ooify</p>
-                    <label>
-                        TECHNOLOGIES
-                        <ul>
-                            <li>Ruby</li>
-                            <li>React</li>
-                            <li>Node.js</li>
-                        </ul>
-                    </label>
-                    <label>
-                        EDUCATION
-                        <ul>
-                            <li>App Academy</li>
-                            <li>LSU</li>
-                            <li>Computer Science</li>
-                        </ul>
-                    </label>
-                    <label>
-                        WORK EXPERIENCE
-                        <ul>
-                            <li>Kibo Commerce</li>
-                            <li>CoEnterprise</li>
-                        </ul>
-                    </label>
+                    <ul>
+                        <label>
+                            TECHNOLOGIES
+                        </label>
+                        <li>Ruby</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                    </ul>
+                    <ul>
+                        <label>
+                            EDUCATION
+                        </label>
+                        <li>App Academy</li>
+                        <li>LSU</li>
+                        <li>Computer Science</li>
+                    </ul>
+                    
+                    <ul>
+                        <label>
+                            WORK EXPERIENCE
+                        </label>
+                        <li>Kibo Commerce</li>
+                        <li>CoEnterprise</li>
+                    </ul>
+
                 </div>
             </div>
         )

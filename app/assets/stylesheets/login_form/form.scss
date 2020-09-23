@@ -1,0 +1,112 @@
+.topFormParagraph{
+    padding-top: 20px;
+    font-size: 15px;
+    padding-bottom: 8px;
+    text-align: center;
+    font-weight: 900;
+}
+
+.demoUserButton{
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    width: 400px;
+    text-align: center;
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.loginForm > form > h5{
+    text-align: center;
+}
+
+.loginForm > form > label > input{
+    border: .5px solid lightgrey;
+    width: 450px;
+    height: 40px;
+}
+
+.inputLabel{
+    color: black;
+    padding-top: 12px;
+    padding-bottom: 6px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.forgotPassword{
+    padding-top: 20px;
+    margin-right: auto;
+    font-size: 15px;
+    text-decoration: underline;
+    color: darkgrey;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.submitButton{
+    width: 210px;
+    height: 20px;
+    background-color:#1DB954;
+    color: white;
+    text-align:center;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px;
+    border-radius: 25px;
+    margin-left: auto;
+}
+
+form{
+    padding-bottom: 10px;
+}
+
+
+.loginForm > .endOfForm{
+    width: 410px;
+}
+
+.dontHaveAccount{
+    padding-top: 20px;
+    font-weight: 700;
+    padding-bottom: 20px;
+}
+
+.signupRedirect{
+    font-size: 15px;
+    border: 2px solid grey;
+    color: grey;
+    font-weight: 600;
+    width: 400px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+.formSeperator{
+    padding-top: 10px;
+    width: 400px;
+    text-align: center;
+    border-bottom: 1px solid lightgrey;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+
+.formSeperator > span{
+    background: white;
+    padding:0 10px
+}
+
+.errorLogin {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    background-color: red;
+    color: white;
+    width: 400px;
+    text-align: center;
+    padding: 15px;
+}

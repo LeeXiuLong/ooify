@@ -6,6 +6,8 @@
     text-decoration: none;
     display:flex;
     justify-content: space-around;
+    width: 100%;
+    position:fixed;
 }
 
 .splashNav > * {
@@ -42,20 +44,5 @@
     font-weight: 600;
 }
 
-.footer {
-    display: flex;
-    justify-content: space-around;
-    padding: 160px;
-    position: fixed;
-    bottom:0;
-    width: 87%;
-    background-color: black;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.footer > label {
-    font-weight: 500;
-}
 
 

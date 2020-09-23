@@ -1,0 +1,43 @@
+.splashFooter {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 160px;
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.splashFooter > label {
+    
+    font-family: 'Montserrat', sans-serif;
+    color: grey;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.splashFooter > ul {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.splashFooter > ul >li {
+    font-weight: 400;
+    color: white;
+    font-size: 16px;
+    padding: 10px; 
+}
+
+.splashFooter > ul > label {
+    font-family: 'Montserrat', sans-serif;
+    color: grey;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.splashFooter > label > ul > li {
+    font-weight: 400;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+}

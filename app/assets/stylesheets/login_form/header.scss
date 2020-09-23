@@ -1,0 +1,25 @@
+.loginForm {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.actualForm{
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.loginForm > hr{
+    width: 100%;
+    opacity: .5;
+}
+
+.loginForm > .header {
+    height: 100px;
+}

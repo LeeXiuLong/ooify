@@ -100,118 +100,104 @@ class SignupForm extends React.Component{
             .then(() => this.props.history.push("/"));
     }
     render(){
-        let errorItems = this.props.errors.map(error => {
-            return <li className="error">{error}</li>
-        })
 
         return(
-            <div>
+            <div className="signupPage">
                 <h4>Ooify</h4>
                 <h2>Sign up for free to start listening.</h2>
-                <h5>Sign up with your email address</h5>
-                <br/>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
+                <form className="signupForm" onSubmit={this.handleSubmit}>
+                    <h5>Sign up with your email address</h5>
+                    <label for="email">
                         What's your email?
-                        <br/>
-                        <input 
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleChange("email")}
-                        />
-                        <br/>
-                        <br/>
-                        {this.state.emailError}
-                        <br/>
                     </label>
-                    <br/>
+                    <input
+                        id="email"
+                        type="text"
+                        value={this.state.email}
+                        onChange={this.handleChange("email")}
+                    />
+                    <p className="signupError">{this.state.emailError}</p>
                     <label>
                         Confirm Your Email
-                        <br/>
-                        <input 
-                            type="text"
-                            value={this.state.confirmEmail}
-                            onChange={this.handleChange("confirmEmail")}
-                        />
                     </label>
-                    <br/>
-                    <br/>
-                    {this.state.confirmEmailError}
-                    <br/>
+                    <input
+                        type="text"
+                        value={this.state.confirmEmail}
+                        onChange={this.handleChange("confirmEmail")}
+                    />
+                    <p className="signupError">{this.state.confirmEmailError}</p>
                     <label>
                         Create a password
-                        <br/>
-                        <input 
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handleChange("password")}
-                        />
-                        <br />
-                        <br />
-                        {this.state.passwordError}
-                        <br/>
                     </label>
-                    <br/>
+                    <input
+                        type="password"
+                        value={this.state.password}
+                        onChange={this.handleChange("password")}
+                    />
+                    <p className="signupError">{this.state.passwordError}</p>
                     <label>
                         What should we call you?
-                        <br/>
-                        <input
-                            type="text"
-                            value={this.state.name}
-                            onChange={this.handleChange("name")}
-                        />
                     </label>
-                    <br />
-                    <br />
-                    {this.state.nameError}
-                    <br/>
-                    <label>
-                        Month
-                        <select name="month" onChange={this.handleChange("month")}>
-                            <option value="0" disabled defaultValue>Month</option>
-                            <option value="1">January</option>
-                            <option value="2">February</option>
-                            <option value="3">March</option>
-                            <option value="4">April</option>
-                            <option value="5">May</option>
-                            <option value="6">June</option>
-                            <option value="7">July</option>
-                            <option value="8">August</option>
-                            <option value="9">September</option>
-                            <option value="10">October</option>
-                            <option value="11">November</option>
-                            <option value="12">December</option>
-                        </select>
-                    </label>
-                    <label>
-                        Day
-                        <input 
-                            type="text"
-                            value={this.state.day}
-                            onChange={this.handleChange("day")}
-                            maxLength="2"
-                        />
-                    </label>
-                    <label>
-                        Year
-                        <input 
-                            type="text"
-                            value={this.state.year}
-                            onChange={this.handleChange("year")}
-                            maxLength="4"
-                        />
-                    </label>
-                    <br />
-                    <br />
-                    {this.state.monthError}
-                    <br/>
-                    {this.state.dayError}
-                    <br/>
-                    {this.state.yearError}
-                    <br/>
+                    <input
+                        type="text"
+                        value={this.state.name}
+                        onChange={this.handleChange("name")}
+                    />
+                    <p className="nameAppears">This appears on your profile.</p>
+                    <p className="signupError">{this.state.nameError}</p>
+                    <label className="dobLabel">What's your date of birth?</label>
+                    <div className="dateContainer">
+                        <div className="dobLabels">
+                            <label for="month">
+                                Month
+                            </label>
+                            <label>
+                                Day
+                            </label>
+                            <label>
+                                Year
+                            </label>
+                        </div>
+                        <div className="dobInputs">
+                            <select className="monthInput" id="month" name="month" onChange={this.handleChange("month")}>
+                                <option value="0" disabled defaultValue>Month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+
+                            <input
+                                className= "dayInput"
+                                type="text"
+                                value={this.state.day}
+                                onChange={this.handleChange("day")}
+                                maxLength="2"
+                            />
+
+                            <input
+                                className="yearInput"
+                                type="text"
+                                value={this.state.year}
+                                onChange={this.handleChange("year")}
+                                maxLength="4"
+                            />
+                        </div>
+                    </div>
+                    
+                    <p className="signupError">{this.state.monthError}</p>
+                    <p className="signupError">{this.state.dayError}</p>
+                    <p className="signupError">{this.state.yearError}</p>
                     <label>
                         What's your gender?
-                        <br/>
                         <label>Male
                             <input type="radio" value="M" name="genderAnswer"/>
                         </label>
@@ -222,14 +208,12 @@ class SignupForm extends React.Component{
                             <input type="radio" value="NB" name="genderAnswer"/>
                         </label>
                     </label>
-                    <br />
-                    <br />
-                    <br/>
                     <button type="submit">SIGN UP</button>
                 </form>
-                <p>Have an account?</p>
-                <br/>
-                <Link to='/login'>Log in</Link>
+                <div className="alreadyHaveAccount">
+                    <p>Have an account?</p>
+                    <Link to='/login'>Log in</Link>
+                </div>
             </div>
         )
     }
