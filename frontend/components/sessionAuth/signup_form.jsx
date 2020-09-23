@@ -68,7 +68,7 @@ class SignupForm extends React.Component{
                     this.setState({ monthError: "" })
                 }
             } else if (type === "day"){
-                if (currentValue.length === 0 || !parseInt(currentValue)) {
+                if (currentValue.length === 0 || !parseInt(currentValue) || !parseInt(currentValue) > 31) {
                     this.setState({ dayError: "Enter a valid day of the month." })
                 }else{
                     this.setState({ dayError: "" })
@@ -101,7 +101,7 @@ class SignupForm extends React.Component{
     }
     render(){
         let errorItems = this.props.errors.map(error => {
-            return <li class="error">{error}</li>
+            return <li className="error">{error}</li>
         })
 
         return(
@@ -122,7 +122,6 @@ class SignupForm extends React.Component{
                         <br/>
                         <br/>
                         {this.state.emailError}
-                        {errorItems[1]}
                         <br/>
                     </label>
                     <br/>
@@ -150,7 +149,6 @@ class SignupForm extends React.Component{
                         <br />
                         <br />
                         {this.state.passwordError}
-                        {errorItems[2]}
                         <br/>
                     </label>
                     <br/>
@@ -166,12 +164,11 @@ class SignupForm extends React.Component{
                     <br />
                     <br />
                     {this.state.nameError}
-                    {errorItems[0]}
                     <br/>
                     <label>
                         Month
                         <select name="month" onChange={this.handleChange("month")}>
-                            <option value="0" disabled selected>Month</option>
+                            <option value="0" disabled defaultValue>Month</option>
                             <option value="1">January</option>
                             <option value="2">February</option>
                             <option value="3">March</option>
@@ -211,7 +208,6 @@ class SignupForm extends React.Component{
                     {this.state.dayError}
                     <br/>
                     {this.state.yearError}
-                    {errorItems[3]}
                     <br/>
                     <label>
                         What's your gender?
@@ -228,7 +224,6 @@ class SignupForm extends React.Component{
                     </label>
                     <br />
                     <br />
-                    {errorItems[4]}
                     <br/>
                     <button type="submit">SIGN UP</button>
                 </form>

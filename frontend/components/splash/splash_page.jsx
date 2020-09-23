@@ -9,9 +9,37 @@ class SplashPage extends React.Component{
 
     render(){
         return(
-        <div>
-            <SplashNavBar />
-        </div>
+            <div>
+                <header>
+                    <SplashNavBar />
+                </header>
+                <div class="footer">
+                    <p>Ooify</p>
+                    <label>
+                        TECHNOLOGIES
+                        <ul>
+                            <li>Ruby</li>
+                            <li>React</li>
+                            <li>Node.js</li>
+                        </ul>
+                    </label>
+                    <label>
+                        EDUCATION
+                        <ul>
+                            <li>App Academy</li>
+                            <li>LSU</li>
+                            <li>Computer Science</li>
+                        </ul>
+                    </label>
+                    <label>
+                        WORK EXPERIENCE
+                        <ul>
+                            <li>Kibo Commerce</li>
+                            <li>CoEnterprise</li>
+                        </ul>
+                    </label>
+                </div>
+            </div>
         )
     }
 }

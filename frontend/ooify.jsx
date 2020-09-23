@@ -30,4 +30,4 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //EndTesting
 
     ReactDOM.render(<Root store={store} />, root);
-})
+});

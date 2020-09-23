@@ -4,14 +4,15 @@ import StillWorking from './still_working';
 import SplashPage from './splash/splash_page';
 import LoginFormContainer from './sessionAuth/login_form_container';
 import SignUpFormContainer from '../components/sessionAuth/signup_form_container'
+import AuthRoute from '../util/route_util';
 
 const App = () => {
     return (
         <div>
             <Route path="/stillWorking" component={StillWorking}/>
             <Route exact path ="/" component={SplashPage}/>
-            <Route path = "/login" component={LoginFormContainer} />
-            <Route path="/signup" component={SignUpFormContainer} />
+            <AuthRoute path = "/login" component={LoginFormContainer} />
+            <AuthRoute path="/signup" component={SignUpFormContainer} />
         </div>
     )
 }

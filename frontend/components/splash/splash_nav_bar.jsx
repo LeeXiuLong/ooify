@@ -9,12 +9,17 @@ class SplashNavBar extends React.Component{
 
     render(){
         return(
-            <div>
-                Ooify
-                <Link to="/stillWorking">Premium</Link>
-                <Link to="/stillWorking">Help</Link>
-                <Link to="/stillWorking">Download</Link>
-                <SplashAuthContainer />
+            <div className="splashNav">
+                <p>Ooify</p>
+                <div>
+                    <div className="nonAuthLinks">
+                        <Link to="/stillWorking">Premium</Link>
+                        <Link to="/stillWorking">Help</Link>
+                        <Link to="/stillWorking">Download</Link>
+                    </div>
+                    <SplashAuthContainer />
+                </div>
+                
             </div>
         )
     }

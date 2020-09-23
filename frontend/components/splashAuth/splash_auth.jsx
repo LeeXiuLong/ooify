@@ -9,21 +9,27 @@ class SplashAuth extends React.Component{
     render(){
         let auth;
         if(this.props.currentUser){
-            auth = <div>
-                        <h6>{this.props.currentUser.name}</h6>
-                        <Link to="/stillWorking">Account</Link>
-                        <button onClick={this.props.logout}>Logout</button>
-                    </div>
+            auth = 
+                <div className="authLinks">
+                    <h1>|</h1>
+                    <h1>{this.props.currentUser.name}</h1>
+                    <Link to="/stillWorking">Account</Link>
+                    <button onClick={this.props.logout}>Logout</button>
+                </div>
+                    
+
         }else{
-            auth =  <div>
-                        <Link to="/signUp">Sign up</Link>
-                        <Link to="/login">Log In</Link>
-                    </div>
+            auth = <div className="authLinks">
+                <h1>|</h1>
+                <Link to="/signUp">Sign up</Link>
+                <Link to="/login">Log In</Link>
+                </div>
+
         }
         return(
-            <div>
+            <React.Fragment>
                 {auth}
-            </div>
+            </React.Fragment>
         )
     }
 }
