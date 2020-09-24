@@ -1,11 +1,20 @@
 .splashFooter {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     padding: 160px;
     background-color: black;
     color: white;
     font-family: 'Montserrat', sans-serif;
+    padding-top: 80px;
+    width: 100%;
+    align-content: center;
+    
+}
+
+.splashFooter > img{
+    height: 62px;
+    width: 132px;
 }
 
 .splashFooter > label {
@@ -17,8 +26,8 @@
 }
 
 .splashFooter > ul {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .splashFooter > ul >li {

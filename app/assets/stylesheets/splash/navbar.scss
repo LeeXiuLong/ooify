@@ -10,6 +10,11 @@
     position:fixed;
 }
 
+.splashNav > img{
+    height: 60px;
+    width: 140px;
+}
+
 .splashNav > * {
     display: flex;
     justify-content: space-between;
@@ -31,14 +36,14 @@
     font-weight: bolder;
     padding:17px;
     &:hover{
-        color: #1DB954;
+        color: #05B205;
     }
 }
 
 .authLinks > *{
     padding:17px;
     &:hover{
-        color: #1DB954;
+        color: #05B205;
     }
     font-size:14px;
     font-weight: 600;
