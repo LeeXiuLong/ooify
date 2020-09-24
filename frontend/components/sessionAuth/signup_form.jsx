@@ -102,7 +102,7 @@ class SignupForm extends React.Component{
     render(){
         return(
             <div className="signupPage">
-                <h4>Ooify</h4>
+                <img src='/assets/black_logo.png' alt=""/>
                 <h2>Sign up for free to start listening.</h2>
                 <form className="signupForm" onSubmit={this.handleSubmit}>
                     <h5>Sign up with your email address</h5>

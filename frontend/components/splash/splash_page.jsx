@@ -23,7 +23,7 @@ class SplashPage extends React.Component{
                     
                 </div>
                 <div class="splashFooter">
-                    <p>Ooify</p>
+                    <img src="assets/white_logo.png"/>
                     <ul>
                         <label>
                             TECHNOLOGIES

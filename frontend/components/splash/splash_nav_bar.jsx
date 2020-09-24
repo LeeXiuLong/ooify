@@ -10,7 +10,7 @@ class SplashNavBar extends React.Component{
     render(){
         return(
             <div className="splashNav">
-                <p>Ooify</p>
+                <img src="assets/white_logo.png" alt=""/>
                 <div>
                     <div className="nonAuthLinks">
                         <Link to="/stillWorking">Premium</Link>
