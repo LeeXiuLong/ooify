@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import black_logo from './black_logo.png'
 
 class SignupForm extends React.Component{
     constructor(props){
@@ -100,20 +101,20 @@ class SignupForm extends React.Component{
             .then(() => this.props.history.push("/"));
     }
     render(){
-
         return(
             <div className="signupPage">
                 <h4>Ooify</h4>
                 <h2>Sign up for free to start listening.</h2>
                 <form className="signupForm" onSubmit={this.handleSubmit}>
                     <h5>Sign up with your email address</h5>
-                    <label for="email">
+                    <label htmlFor="email">
                         What's your email?
                     </label>
                     <input
                         id="email"
                         type="text"
                         value={this.state.email}
+                        placeholder="Enter your email."
                         onChange={this.handleChange("email")}
                     />
                     <p className="signupError">{this.state.emailError}</p>
@@ -121,6 +122,7 @@ class SignupForm extends React.Component{
                         Confirm Your Email
                     </label>
                     <input
+                        placeholder = "Enter your email again."
                         type="text"
                         value={this.state.confirmEmail}
                         onChange={this.handleChange("confirmEmail")}
@@ -130,6 +132,7 @@ class SignupForm extends React.Component{
                         Create a password
                     </label>
                     <input
+                        placeholder = "Create a password."
                         type="password"
                         value={this.state.password}
                         onChange={this.handleChange("password")}
@@ -139,6 +142,7 @@ class SignupForm extends React.Component{
                         What should we call you?
                     </label>
                     <input
+                        placeholder="Enter a profile name."
                         type="text"
                         value={this.state.name}
                         onChange={this.handleChange("name")}
@@ -148,7 +152,7 @@ class SignupForm extends React.Component{
                     <label className="dobLabel">What's your date of birth?</label>
                     <div className="dateContainer">
                         <div className="dobLabels">
-                            <label for="month">
+                            <label className="monthLabel">
                                 Month
                             </label>
                             <label>
@@ -160,7 +164,7 @@ class SignupForm extends React.Component{
                         </div>
                         <div className="dobInputs">
                             <select className="monthInput" id="month" name="month" onChange={this.handleChange("month")}>
-                                <option value="0" disabled defaultValue>Month</option>
+                                <option value="0" disabled selected>Month</option>
                                 <option value="1">January</option>
                                 <option value="2">February</option>
                                 <option value="3">March</option>
@@ -176,6 +180,7 @@ class SignupForm extends React.Component{
                             </select>
 
                             <input
+                                placeholder = "DD"
                                 className= "dayInput"
                                 type="text"
                                 value={this.state.day}
@@ -184,6 +189,7 @@ class SignupForm extends React.Component{
                             />
 
                             <input
+                                placeholder = "YYYY"
                                 className="yearInput"
                                 type="text"
                                 value={this.state.year}
@@ -196,22 +202,35 @@ class SignupForm extends React.Component{
                     <p className="signupError">{this.state.monthError}</p>
                     <p className="signupError">{this.state.dayError}</p>
                     <p className="signupError">{this.state.yearError}</p>
-                    <label>
+                    <label className="genderLabel">
                         What's your gender?
-                        <label>Male
-                            <input type="radio" value="M" name="genderAnswer"/>
-                        </label>
-                        <label>Female
-                            <input type="radio" value="F" name="genderAnswer"/>
-                        </label>
-                        <label>Non-binary
-                            <input type="radio" value="NB" name="genderAnswer"/>
-                        </label>
                     </label>
+                    <div className="genderInputs">
+                        <label>
+                            <input type="radio" value="M" name="genderAnswer" />
+                            Male
+                        </label>
+                        <label>
+                            <input type="radio" value="F" name="genderAnswer" />
+                            Female
+                        </label>
+                        <label>
+                            <input type="radio" value="NB" name="genderAnswer" />
+                            Non-binary
+                        </label>
+                    </div>
+                    <p>By clicking on Sign up, you agree to Spotify's
+                        <a href="">Terms and Conditions of Use.</a>
+                    </p>
+                    <p className="privacyFirst">To learn more about how Spotify collects, uses, shares and protects your</p>
+                    <p>
+                        personal data please read Spotify's
+                        <a href="">Privacy Policy.</a>
+                    </p>
                     <button type="submit">SIGN UP</button>
                 </form>
                 <div className="alreadyHaveAccount">
-                    <p>Have an account?</p>
+                    <p>Have an account? </p>
                     <Link to='/login'>Log in</Link>
                 </div>
             </div>

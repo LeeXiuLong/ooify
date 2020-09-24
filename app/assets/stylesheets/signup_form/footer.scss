@@ -1,0 +1,11 @@
+.alreadyHaveAccount{
+    display: flex;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.alreadyHaveAccount > a{
+    padding-left: 2px;
+    color: #1DB954;
+    text-decoration: underline;
+}
