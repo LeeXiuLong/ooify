@@ -41,6 +41,6 @@ export const logout = () => {
 export const signup = user => {
     return dispatch => {
         return APIUtil.signup(user)
-            .then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors.responseJSON)))
+            .then(user => dispatch(receiveCurrentUser(user)))
     }
 }

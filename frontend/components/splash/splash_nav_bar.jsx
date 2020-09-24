@@ -10,11 +10,11 @@ class SplashNavBar extends React.Component{
     render(){
         return(
             <div className="splashNav">
-                <img src="assets/white_logo.png" alt=""/>
+                <img src={window.white_logo} />
                 <div>
                     <div className="nonAuthLinks">
-                        <Link to="/stillWorking">Premium</Link>
-                        <Link to="/stillWorking">Help</Link>
+                        <a href="https://github.com/LeeXiuLong/">GitHub</a>
+                        <a href="https://www.linkedin.com/in/jourdan-ooi/">LinkedIn</a>
                         <Link to="/stillWorking">Download</Link>
                     </div>
                     <SplashAuthContainer />

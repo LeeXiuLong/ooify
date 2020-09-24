@@ -49,5 +49,56 @@
     font-weight: 600;
 }
 
+.authLinks > .dropdown-trigger{
+    position: relative;
+}
+
+.authLinks > .dropdown-trigger > .dropdown-logout{
+    display: none;
+    position: absolute;
+}
+
+.authLinks > .dropdown-trigger:active > .dropdown-logout{
+    display: block;
+}
+
+.authLinks > .dropdown-trigger:hover > .dropdown-logout{
+    display: block;
+}
+
+.authLinks > .dropdown-trigger > .dropdown-logout{
+    // display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 20px;
+    left: -55px;
+}
+
+.authLinks > .dropdown-trigger > .dropdown-logout > li{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    color: black;
+    width: 125px;
+    height: 80px;
+    padding-left: 10px;
+    border-radius: 2px;
+}
+
+.authLinks > .dropdown-trigger > .dropdown-logout > li > button{
+    color: grey;
+}
+
+.authLinks > .dropdown-trigger > .dropdown-logout > li > button:hover{
+    color: blue;
+}
+
+.authLinks > .dropdown-trigger > .dropdown-logout > li >  .account:hover{
+    color: blue;
+}
+
+
+
 
 
