@@ -96,13 +96,14 @@ class SignupForm extends React.Component{
             birthdate,
             gender: this.state.gender,
         }
+        console.log(userSubmit);
         this.props.processForm(userSubmit)
             .then(() => this.props.history.push("/"));
     }
     render(){
         return(
             <div className="signupPage">
-                <img src='/assets/black_logo.png' alt=""/>
+                <img src={window.black_logo} />
                 <h2>Sign up for free to start listening.</h2>
                 <form className="signupForm" onSubmit={this.handleSubmit}>
                     <h5>Sign up with your email address</h5>
@@ -206,15 +207,15 @@ class SignupForm extends React.Component{
                     </label>
                     <div className="genderInputs">
                         <label>
-                            <input type="radio" value="M" name="genderAnswer" />
+                            <input type="radio" value="M" name="genderAnswer" onChange={this.handleChange("gender")} />
                             Male
                         </label>
                         <label>
-                            <input type="radio" value="F" name="genderAnswer" />
+                            <input type="radio" value="F" name="genderAnswer" onChange={this.handleChange("gender")}/>
                             Female
                         </label>
                         <label>
-                            <input type="radio" value="NB" name="genderAnswer" />
+                            <input type="radio" value="NB" name="genderAnswer" onChange={this.handleChange("gender")}/>
                             Non-binary
                         </label>
                     </div>

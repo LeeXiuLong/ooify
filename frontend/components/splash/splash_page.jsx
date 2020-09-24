@@ -23,7 +23,7 @@ class SplashPage extends React.Component{
                     
                 </div>
                 <div class="splashFooter">
-                    <img src="assets/white_logo.png"/>
+                    <img src={window.white_logo} />
                     <ul>
                         <label>
                             TECHNOLOGIES

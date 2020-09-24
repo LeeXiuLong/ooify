@@ -40,7 +40,7 @@ class LoginForm extends React.Component{
         })
         return(
             <div className = "loginForm">
-                <img src="assets/black_logo.png"/>
+                <img src={window.black_logo}/>
                 <hr/>
                 <form className="actualForm" onSubmit={this.handleSubmit}>
                     <p className="topFormParagraph">To continue, log in to Ooify.</p>
