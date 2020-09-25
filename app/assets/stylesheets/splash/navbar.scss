@@ -81,9 +81,9 @@
     background-color: white;
     color: black;
     width: 125px;
-    height: 80px;
-    padding-left: 10px;
+    height: 70px;
     border-radius: 2px;
+    padding: 10px;
 }
 
 .authLinks > .dropdown-trigger > .dropdown-logout > li > button{
@@ -96,6 +96,21 @@
 
 .authLinks > .dropdown-trigger > .dropdown-logout > li >  .account:hover{
     color: blue;
+}
+
+.authLinks > i{
+    color: white;
+
+}
+
+.authLinks > .dropdown-trigger > .dropdown-logout > .triangle{
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid white;
+    margin-left: 100px;
+    margin-top: 10px;
 }
 
 

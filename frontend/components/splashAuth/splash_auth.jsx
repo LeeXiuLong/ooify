@@ -12,10 +12,12 @@ class SplashAuth extends React.Component{
             auth = 
                 <div className="authLinks">
                     <h1>|</h1>
-                    <h1>{this.props.currentUser.name}</h1>
+                    <i class="far fa-user"></i>
                     <div className = "dropdown-trigger">
                         <button className="dropdown-button">Profile</button>
+                        <div className = "placeholder"></div>
                         <ul className="dropdown-logout">
+                            <div className="triangle"></div>
                             <li className="logout-list">
                                 <Link className="account" to="/stillWorking">Account</Link>
                                 <button onClick={this.props.logout}>Logout</button>

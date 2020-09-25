@@ -13,3 +13,14 @@ user = User.create({
     gender: "M",
     birthdate: "3-15-2020"
 })
+
+artist = Artist.create({
+    name: "Pop Smoke"
+})
+
+album = Album.create({
+    name: "Meet the Woo",
+    artist_id: 1,
+    release_year: 2019,
+    label: "Republic Records"
+})
