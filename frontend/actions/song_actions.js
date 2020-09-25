@@ -16,9 +16,9 @@ export const receiveAlbumTracks = songs => {
     }
 }
 
-export const getAlbumTracks = album => {
+export const getAlbumTracks = albumId => {
     return dispatch => {
-        return mainAPIUtil.getAlbumTracks(album)
+        return mainAPIUtil.getAlbumTracks(albumId)
             .then(songs => dispatch(receiveAlbumTracks(songs)))
     }
 }

@@ -9,9 +9,9 @@ export const receiveArtist = artist => {
     }
 }
 
-export const getArtist = artist => {
+export const getArtist = artistId => {
     return dispatch => {
-        return mainAPIUtil.getArtist(artist)
+        return mainAPIUtil.getArtist(artistId)
             .then(artist => dispatch(receiveArtist(artist)))
     }
 }

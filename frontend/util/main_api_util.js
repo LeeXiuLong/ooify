@@ -1,27 +1,27 @@
-export const getArtist = artist => {
+export const getArtist = artistId => {
     return $.ajax({
         method: "GET",
-        url: `/api/artists/${artist.id}`
+        url: `/api/artists/${artistId}`
     })
 }
 
-export const getAlbum = album => {
+export const getAlbum = albumId => {
     return $.ajax({
         method: "GET",
-        url: `/api/albums/${album.id}`
+        url: `/api/albums/${albumId}`
     })
 }
 
-export const getArtistDisco = artist => {
+export const getArtistDisco = artistId => {
     return $.ajax({
         method: "GET",
-        url: `/api/artists/${artist.id}/albums`
+        url: `/api/artists/${artistId}/albums`
     })
 }
 
-export const getAlbumTracks = album => {
+export const getAlbumTracks = albumId => {
     return $.ajax({
         method: "GET",
-        url: `/api/albums/${album.id}/songs`
+        url: `/api/albums/${albumId}/songs`
     })
 }

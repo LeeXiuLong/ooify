@@ -16,16 +16,16 @@ export const receiveDisco = albums => {
     }
 }
 
-export const getAlbum = album => {
+export const getAlbum = albumId => {
     return dispatch =>{
-        return mainAPIUtil.getAlbum(album)
+        return mainAPIUtil.getAlbum(albumId)
             .then(album => dispatch(receiveAlbum(album)));
     }
 }
 
-export const getArtistDisco = artist => {
+export const getArtistDisco = artistId => {
     return dispatch => {
-        return mainAPIUtil.getArtistDisco(artist)
+        return mainAPIUtil.getArtistDisco(artistId)
             .then(albums => dispatch(receiveDisco(albums)))
     }
 }
