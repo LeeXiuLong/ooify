@@ -18,8 +18,9 @@ class ArtistShow extends React.Component{
         
         let albumLinks = this.props.albums.map(album => {
             return <li>
-                <Link to="/">
-                    <img src={`${album.artworkURL}`} alt=""/>
+                <Link to={`/albums/${album.id}`}>
+                    <img className="albumArtwork" src={`${album.artworkURL}`} alt=""/>
+                    <label>{album.name}</label>
                 </Link>
             </li>
         })
@@ -27,7 +28,7 @@ class ArtistShow extends React.Component{
         return(
             <div>
                 <h1>{this.props.artist.name}</h1>
-                <img src={`${this.props.artist.proPicUrl}`} />
+                <img src={`${this.props.artist.proPicUrl}`} className ="artistProPic"/>
                 <ul>
                     {albumLinks}
                 </ul>

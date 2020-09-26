@@ -6,6 +6,8 @@ import LoginFormContainer from './sessionAuth/login_form_container';
 import SignUpFormContainer from '../components/sessionAuth/signup_form_container'
 import AuthRoute from '../util/route_util';
 import ArtistShowContainer from './artists/artist_show_container';
+import LoggedRoute from '../util/logged_route';
+import AlbumShowContainer from './albums/album_show_container'
 
 const App = () => {
     
@@ -15,7 +17,8 @@ const App = () => {
             <Route exact path ="/" component={SplashPage}/>
             <AuthRoute path = "/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignUpFormContainer} />
-            <AuthRoute path="/artists/:artistId" component={ArtistShowContainer} />
+            <LoggedRoute path="/artists/:artistId" component={ArtistShowContainer} />
+            <LoggedRoute path="/albums/:albumId" component={AlbumShowContainer} />
         </div>
     )
 }
