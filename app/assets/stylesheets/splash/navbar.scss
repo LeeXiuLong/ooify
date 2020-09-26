@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap');
 
+.splash{
+}
+
 .splashNav{
     background-color: black;
     color: white;
@@ -47,6 +50,12 @@
     }
     font-size:14px;
     font-weight: 600;
+}
+
+.authLinks > i {
+    &:hover{
+        color: white;
+    }
 }
 
 .authLinks > .dropdown-trigger{

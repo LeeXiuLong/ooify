@@ -24,9 +24,10 @@
 
 .signupForm > input{
     border: .8px solid lightgrey;
-    width: 100%;
+    width: 95%;
     height: 46px;
     border-radius: 5px;
+    padding-left: 15px;
 }
 
 .signupForm > .nameAppears {
@@ -36,6 +37,7 @@
     padding-bottom: 5px;
     padding-top: 10px;
 }
+
 
 .signupForm > .dobLabel{
 }
@@ -65,14 +67,15 @@
     border: .8px solid lightgrey;
     height: 40px;
     border-radius: 5px;
+    padding-left:15px;
 }
 
 .dayInput{
-    width: 90px;
+    width: 75px;
 }
 
 .yearInput{
-    width: 120px;
+    width: 105px;
 }
 
 .monthInput{
@@ -85,12 +88,25 @@
     font-weight: 500;
 }
 
+.genderLabel{
+    padding: 0px;
+    margin: 0px;
+}
+
 .genderInputs{
     margin-right: auto;
-    width: 300px;
+    width: 320px;
     display:flex;
     justify-content: space-between;
     padding-bottom: 25px;
+}
+
+.genderInputs > label{
+    display: flex;
+}
+
+.genderInputs > label > p{
+    padding-left: 15px;
 }
 
 .genderInputs > input{

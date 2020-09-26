@@ -208,25 +208,17 @@ class SignupForm extends React.Component{
                     <div className="genderInputs">
                         <label>
                             <input type="radio" value="M" name="genderAnswer" onChange={this.handleChange("gender")} />
-                            Male
+                            <p>Male</p>
                         </label>
                         <label>
                             <input type="radio" value="F" name="genderAnswer" onChange={this.handleChange("gender")}/>
-                            Female
+                            <p>Female</p>
                         </label>
                         <label>
                             <input type="radio" value="NB" name="genderAnswer" onChange={this.handleChange("gender")}/>
-                            Non-binary
+                            <p>Non-binary</p>
                         </label>
                     </div>
-                    <p>By clicking on Sign up, you agree to Spotify's
-                        <a href="">Terms and Conditions of Use.</a>
-                    </p>
-                    <p className="privacyFirst">To learn more about how Spotify collects, uses, shares and protects your</p>
-                    <p>
-                        personal data please read Spotify's
-                        <a href="">Privacy Policy.</a>
-                    </p>
                     <button type="submit">SIGN UP</button>
                 </form>
                 <div className="alreadyHaveAccount">

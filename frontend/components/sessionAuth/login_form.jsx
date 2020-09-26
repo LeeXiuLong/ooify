@@ -14,6 +14,10 @@ class LoginForm extends React.Component{
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
+    componentWillUnmount(){
+        this.props.clearErrors();
+    }
+
     handleChange(type){
         return e => this.setState({ [type]: e.currentTarget.value})
     }
@@ -69,7 +73,6 @@ class LoginForm extends React.Component{
                             onChange={this.handleChange("password")}
                         />
                     </label>
-                    <a className="forgotPassword" href="/login">Forgot your password?</a>
                     <button className="submitButton" type="submit">LOG IN</button>
                 </form>
                 <hr className="endOfForm"/>
