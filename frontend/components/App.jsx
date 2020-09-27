@@ -8,17 +8,21 @@ import AuthRoute from '../util/route_util';
 import ArtistShowContainer from './artists/artist_show_container';
 import LoggedRoute from '../util/logged_route';
 import AlbumShowContainer from './albums/album_show_container'
+import Modal from './Modal.jsx';
+import HomeContainer from './home/home_container'
 
 const App = () => {
     
     return (
         <div>
+            <Modal />
             <Route path="/stillWorking" component={StillWorking}/>
             <Route exact path ="/" component={SplashPage}/>
             <AuthRoute path = "/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignUpFormContainer} />
             <LoggedRoute path="/artists/:artistId" component={ArtistShowContainer} />
             <LoggedRoute path="/albums/:albumId" component={AlbumShowContainer} />
+            <LoggedRoute path="/home/:userId" component={HomeContainer} />
         </div>
     )
 }

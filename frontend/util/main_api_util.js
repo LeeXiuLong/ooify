@@ -25,3 +25,32 @@ export const getAlbumTracks = albumId => {
         url: `/api/albums/${albumId}/songs`
     })
 }
+
+export const makePlaylist = playlist => {
+    return $.ajax({
+        method: "POST",
+        url: "/api/playlists",
+        data: { playlist }
+    })
+}
+
+export const getPlaylist = playlistId => {
+    return $.ajax({
+        method: "GET",
+        url: `/api/playlists/${playlistId}`
+    })
+}
+
+export const editPlaylist = playlist => {
+    return $.ajax({
+        method: "PATCH",
+        url: `/api/playlist/${playlist.id}`
+    })
+}
+
+export const deletePlaylist = playlist => {
+    return $.ajax({
+        method: "DELETE",
+        url: `/api/playlist/${playlist.id}`
+    })
+}

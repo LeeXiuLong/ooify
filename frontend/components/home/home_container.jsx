@@ -1,5 +1,6 @@
-import { connect } from 'react-redux'
-import Home from './home'
+import { connect } from 'react-redux';
+import Home from './home';
+import {openModal} from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
     return {
@@ -9,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        openModal:() => dispatch(openModal("makePlaylist"))
     }
 }
 

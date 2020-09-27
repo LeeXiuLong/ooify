@@ -11,6 +11,7 @@ User.destroy_all
 Artist.destroy_all
 Album.destroy_all
 Song.destroy_all
+Playlist.destroy_all
 
 
 #users
@@ -22,7 +23,7 @@ brewner = User.create({
     birthdate: "3-15-2020"
 })
 
-
+``
 #Artists 
 #how to attach profile pic
 # artist_name_profile_pic = PUT URL HERE
@@ -244,6 +245,13 @@ still_beautiful = Song.create({
 })
 still_beautiful_track = open("https://ooify-dev.s3.amazonaws.com/Songs/ANightInSeoul/%EC%97%AC%EC%A0%84%ED%9E%88%EC%95%84%EB%A6%84%EB%8B%A4%EC%9A%B4%EC%A7%80.mp3")
 still_beautiful.track.attach(io: still_beautiful_track, filename:"StillBeautiful.mp3")
+
+p = Playlist.create({
+    name: "First Playlist",
+    user_id: brewner.id
+})
+
+
 
 
 

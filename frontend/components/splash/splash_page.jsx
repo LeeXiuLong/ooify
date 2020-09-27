@@ -1,5 +1,6 @@
 import React from 'react';
 import SplashNavBar from './splash_nav_bar';
+import { Link } from 'react-router-dom'
 
 
 class SplashPage extends React.Component{
@@ -8,15 +9,27 @@ class SplashPage extends React.Component{
     }
 
     render(){
+        let currentId;
+        if(this.props.userId){
+            currentId = this.props.userId
+        }else{
+            currentId = 0;
+        }
         return(
             <div className="splash">
                 <header>
                     <SplashNavBar />
                 </header>
                 <div className="mainSplash">
-                    <h1>Listening is everything.
+                    <h1 className="listeningisEverything">
+                        <div className ="listeningIs">Listening is</div>
+                        <div className="everything">Everything</div>
                         <p>Millions of songs and podcasts. No credit card needed.</p>
-                        <button>Open Web Player</button>
+                        <Link className="button" to={`/home/${currentId}`}>
+                            <div>
+                                Open Web Player
+                            </div>
+                        </Link>
                     </h1>
                     
                     

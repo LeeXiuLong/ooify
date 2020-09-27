@@ -12,7 +12,7 @@ class SplashAuth extends React.Component{
             auth = 
                 <div className="authLinks">
                     <h1>|</h1>
-                    <i class="far fa-user"></i>
+                    <i className="far fa-user"></i>
                     <div className = "dropdown-trigger">
                         <button className="dropdown-button">Profile</button>
                         <div className = "placeholder"></div>

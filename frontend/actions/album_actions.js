@@ -29,16 +29,3 @@ export const getArtistDisco = artistId => {
             .then(albums => dispatch(receiveDisco(albums)))
     }
 }
-
-export const getUserPlaylist = userId => {
-    return dispatch => {
-        return mainAPIUtil.getUserPlaylist(userID)
-    }
-}
-
-export const getUserPlaylist(userId) => {
-    return {
-        method: "GET",
-        url: "/api/users/${userId}/playlists"
-    }
-}

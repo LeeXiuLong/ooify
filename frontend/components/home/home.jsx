@@ -8,7 +8,9 @@ class Home extends React.Component{
     render(){
         return(
             <div>
-                <button></button>
+                <button onClick={this.props.openModal}>
+                    Make a Playlist!
+                </button>
             </div>
         )
     }
