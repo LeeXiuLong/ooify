@@ -17,7 +17,7 @@ class ArtistShow extends React.Component{
         }
         
         let albumLinks = this.props.albums.map(album => {
-            return <li>
+            return <li key={album.id}>
                 <Link to={`/albums/${album.id}`}>
                     <img className="albumArtwork" src={`${album.artworkURL}`} alt=""/>
                     <label>{album.name}</label>
