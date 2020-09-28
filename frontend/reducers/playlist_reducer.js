@@ -1,4 +1,5 @@
 import {RECEIVE_PLAYLIST} from '../actions/playlist_actions'
+import { RECEIVE_CURRENT_USER } from '../actions/session_actions'
 
 const PlaylistsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -10,6 +11,8 @@ const PlaylistsReducer = (state = {}, action) => {
             newState = Object.assign({}, state);
             newState[action.playlist.id] = action.playlist;
             return newState;
+        case RECEIVE_CURRENT_USER:
+            return action.currentUser.playlists;
         default:
             return state;
     }

@@ -3,7 +3,8 @@ class Api::PlaylistsController < ApplicationController
     def create
         @playlist = Playlist.new(playlist_params)
         if @playlist.save
-            render :show
+            @user = User.find(@playlist.user_id)
+            render "api/users/show"
         else
             render json: ["You are either not logged in or this name is not valid."], status: 401
         end

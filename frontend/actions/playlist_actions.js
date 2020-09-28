@@ -1,6 +1,7 @@
 export const RECEIVE_PLAYLISTS = "RECEIVE_PLAYLISTS";
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 import * as mainAPIUtil from '../util/main_api_util'
+import { receiveCurrentUser } from './session_actions';
 
 export const receivePlaylists = playlists => {
     return {
@@ -20,5 +21,12 @@ export const getPlaylist = playlistId => {
     return dispatch => {
         return mainAPIUtil.getPlaylist(playlistId)
             .then(playlist => dispatch(receivePlaylist(playlist)))
+    }
+}
+
+export const makePlaylist = playlist => {
+    return dispatch => {
+        return mainAPIUtil.makePlaylist(playlist)
+            .then(user => dispatch(receiveCurrentUser(user)))
     }
 }

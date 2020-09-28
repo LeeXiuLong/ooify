@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600&display=swap');
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 40%;
+  width: 100%
+}
+
+.make-playlist-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playlist-form-x{
+    font-size: 50px;
+    font-family: 'Jura', sans-serif;;
+    font-weight: 300;
+    color: white;
+}
+
+.playlist-form-x:hover{
+    font-size: 55px;
+}
+
+.playlist-form-header{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 45px;
+    color: white;
+    font-weight: 800;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.playlist-input{
+    padding-top: 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    background-color: #393939;
+    height: 100px;
+}
+
+.playlist-form-input-label{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 22%;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.playlist-form-input{
+    padding-top: 5px;
+    width:100%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 22%;
+    font-weight: 800;
+    font-size: 45px;
+}
+
+.playlist-form-buttons{
+    display: flex;
+    width: 15%;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.playlist-form-buttons > button{
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    text-align: center;
+    width: 130px;
+    height: 35px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.playlist-cancel-button{
+    border: 1px solid white;
+}
+
+.playlist-create-button{
+    background-color: #1ed760;
+}

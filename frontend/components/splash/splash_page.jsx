@@ -10,8 +10,8 @@ class SplashPage extends React.Component{
 
     render(){
         let currentId;
-        if(this.props.userId){
-            currentId = this.props.userId
+        if (this.props.userID){
+            currentId = this.props.userID
         }else{
             currentId = 0;
         }

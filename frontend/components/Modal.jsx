@@ -1,8 +1,6 @@
 import React from 'react';
-import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
-import PlaylistForm from './playlists/playlist_form';
-import { makePlaylist } from '../actions/playlist_actions'
+import PlaylistFormContainer from './playlists/playlist_form_container';
 
 class Modal extends React.Component {
     constructor(props){
@@ -15,8 +13,10 @@ class Modal extends React.Component {
         }
 
         return (
-            <div>
-                <div className="modal" onClick={e=> e.stopPropagation()}><PlaylistForm closeModal={this.props.closeModal}/></div>
+            <div className="modal-background">
+                <div className="modal" onClick={e=> e.stopPropagation()}>
+                    <PlaylistFormContainer />
+                </div>
             </div>
         )
     }
@@ -25,14 +25,11 @@ class Modal extends React.Component {
 const mapStateToProps = state => {
     return{
         modal: state.ui.modal,
-        currentUser: state.session.id
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        closeModal: () => dispatch(closeModal()),
-        makePlaylist: playlist => dispatch(makePlaylist(playlist))
     }
 }
 

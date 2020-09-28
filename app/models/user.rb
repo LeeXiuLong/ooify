@@ -7,6 +7,8 @@ class User < ApplicationRecord
     validates :birthdate, presence: {message: "You need to enter your birthdate"}
     validates :gender, presence: {message: "Select your gender."}
 
+    has_many :playlists
+
     attr_reader :password
 
     before_validation :ensure_session_token
