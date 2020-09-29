@@ -1,5 +1,6 @@
 export const RECEIVE_PLAYLISTS = "RECEIVE_PLAYLISTS";
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
+export const CLEAR_PLAYLISTS = "CLEAR_PLAYLISTS";
 import * as mainAPIUtil from '../util/main_api_util'
 import { receiveCurrentUser } from './session_actions';
 
@@ -14,6 +15,12 @@ export const receivePlaylist = playlist => {
     return{
         type: RECEIVE_PLAYLIST,
         playlist
+    }
+}
+
+export const clearPlaylists = () => {
+    return{
+        type: CLEAR_PLAYLISTS,
     }
 }
 

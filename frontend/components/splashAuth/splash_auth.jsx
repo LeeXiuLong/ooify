@@ -19,7 +19,7 @@ class SplashAuth extends React.Component{
                         <ul className="dropdown-logout">
                             <div className="triangle"></div>
                             <li className="logout-list">
-                                <Link className="account" to="/stillWorking">Account</Link>
+                                <Link className="account" to={`/home/${this.props.currentUser.id}`}>Home Page</Link>
                                 <button onClick={this.props.logout}>Logout</button>
                             </li>
                         </ul>

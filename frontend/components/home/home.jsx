@@ -15,7 +15,7 @@ class Home extends React.Component{
                 <button onClick={this.props.openModal}>
                     +Create Playlist
                 </button>
-                <ul>
+                <ul className = "user-playlist-index">
                     {playlists}
                 </ul>
             </div>

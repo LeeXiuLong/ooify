@@ -247,9 +247,37 @@ still_beautiful_track = open("https://ooify-dev.s3.amazonaws.com/Songs/ANightInS
 still_beautiful.track.attach(io: still_beautiful_track, filename:"StillBeautiful.mp3")
 
 p = Playlist.create({
-    name: "First Playlist",
+    name: "Carley and Pop",
     user_id: brewner.id
 })
+
+p2 = Playlist.create({
+    name: "Toy and Kendrick",
+    user_id: brewner.id
+})
+
+pS = PlaylistSong.create({
+    playlist_id: p.id,
+    song_id: get_back.id
+})
+
+pS2 = PlaylistSong.create({
+    playlist_id: p.id,
+    song_id: run_away_with_me.id
+})
+
+pS3 = PlaylistSong.create({
+    playlist_id: p2.id,
+    song_id: blowmyhigh.id
+})
+
+pS4 = PlaylistSong.create({
+    playlist_id: p2.id,
+    song_id: still_beautiful.id
+})
+
+
+
 
 
 

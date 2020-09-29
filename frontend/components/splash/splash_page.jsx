@@ -17,9 +17,7 @@ class SplashPage extends React.Component{
         }
         return(
             <div className="splash">
-                <header>
-                    <SplashNavBar />
-                </header>
+                <SplashNavBar />
                 <div className="mainSplash">
                     <h1 className="listeningisEverything">
                         <div className ="listeningIs">Listening is</div>

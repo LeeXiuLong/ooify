@@ -8,7 +8,7 @@ import AuthRoute from '../util/route_util';
 import ArtistShowContainer from './artists/artist_show_container';
 import LoggedRoute from '../util/logged_route';
 import AlbumShowContainer from './albums/album_show_container'
-import Modal from './Modal.jsx';
+import PlaylistModal from './Modal.jsx';
 import HomeContainer from './home/home_container'
 import PlaylistShowContainer from './playlists/playlist_show_container';
 
@@ -16,7 +16,7 @@ const App = () => {
     
     return (
         <div>
-            <Modal />
+            <PlaylistModal />
             <Route path="/stillWorking" component={StillWorking}/>
             <Route exact path ="/" component={SplashContainer}/>
             <AuthRoute path = "/login" component={LoginFormContainer} />

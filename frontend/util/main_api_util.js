@@ -61,3 +61,18 @@ export const getUser = userId => {
         url:`/api/users/${userId}`
     })
 }
+
+export const addSongToPlaylist = (playlistSong) => {
+    return $.ajax({
+        method: "POST",
+        url: `/api/playlist_songs`,
+        data: { playlistSong }
+    })
+}
+
+export const removeSongFromPlaylist = (playlistSongId) => {
+    return $.ajax({
+        method: "DELETE",
+        url: `/api/playlist_songs/${playlistSongId}`
+    })
+}

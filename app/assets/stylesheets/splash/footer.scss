@@ -2,19 +2,20 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 160px;
+    padding: 140px;
     background-color: black;
     color: white;
     font-family: 'Montserrat', sans-serif;
     padding-top: 80px;
-    width: 87%;
+    max-width: 100%;
     align-content: center;
-    
+    height: 400px;
 }
 
 .splashFooter > img{
     height: 62px;
     width: 132px;
+    padding-right: 20px;
 }
 
 .splashFooter > label {
@@ -26,15 +27,20 @@
 }
 
 .splashFooter > ul {
-    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 60px;
     padding-right: 40px;
+    padding-top: 30px;
+    height: 60%;
 }
 
 .splashFooter > ul >li {
     font-weight: 400;
     color: white;
     font-size: 16px;
-    padding: 10px; 
+    padding: 10px;
+    padding-bottom: 15px; 
 }
 
 .splashFooter > ul > label {
@@ -42,6 +48,7 @@
     color: grey;
     font-size: 12px;
     font-weight: bold;
+    padding-bottom: 20px;
 }
 
 .splashFooter > label > ul > li {

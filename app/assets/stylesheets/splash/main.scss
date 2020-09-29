@@ -5,7 +5,7 @@
     justify-content: center;
     background-color: #2d46b9;
     height: 100vh;
-    max-width: 100%;
+    width: 100%;
     align-items: center;
     h1 {
         max-width: 1000px;
@@ -54,6 +54,10 @@
     width: 200px;
     font-weight: 500;
     margin-bottom: 20px;
+}
+
+.listeningisEverything > .button:hover{
+    background-color: white;
 }
 
 html{

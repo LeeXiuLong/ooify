@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PlaylistFormContainer from './playlists/playlist_form_container';
 
-class Modal extends React.Component {
+class PlaylistModal extends React.Component {
     constructor(props){
         super(props)
     }
@@ -33,4 +33,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default connect(mapStateToProps, mapDispatchToProps)(PlaylistModal);

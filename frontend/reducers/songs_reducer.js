@@ -1,4 +1,5 @@
-import {RECEIVE_ALBUM_TRACKS, CLEAR_SONGS} from '../actions/song_actions';
+import { RECEIVE_ALBUM_TRACKS, CLEAR_SONGS } from '../actions/song_actions';
+import { RECEIVE_PLAYLIST } from '../actions/playlist_actions';
 
 const SongsReducer = (state= {}, action) => {
     Object.freeze(state);
@@ -10,6 +11,9 @@ const SongsReducer = (state= {}, action) => {
             action.songs.forEach(song=>{
                 newState[song.id] = song
             })
+            return newState;
+        case RECEIVE_PLAYLIST:
+            newState = action.playlist.songs
             return newState;
         case CLEAR_SONGS:
             return {};

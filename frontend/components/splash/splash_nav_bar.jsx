@@ -15,7 +15,7 @@ class SplashNavBar extends React.Component{
                     <div className="nonAuthLinks">
                         <a href="https://github.com/LeeXiuLong/">GitHub</a>
                         <a href="https://www.linkedin.com/in/jourdan-ooi/">LinkedIn</a>
-                        <Link to="/stillWorking">Download</Link>
+                        <a href="https://docs.google.com/document/d/1gavjNXqdXnFg-yQLHhO-P1cHD0XEqvVLsIXPkuG0MJ8/edit?usp=sharing">Resume</a>
                     </div>
                     <SplashAuthContainer />
                 </div>
