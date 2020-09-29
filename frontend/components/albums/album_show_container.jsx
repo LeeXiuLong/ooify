@@ -6,11 +6,12 @@ import { getArtist } from '../../actions/artist_actions';
 
 const mapStateToProps = (state, ownProps) => {
     let songs = Object.values(state.entities.songs);
-
-
+    let album_songs = songs.filter(song => {
+        return song.album_id === parseInt(ownProps.match.params.albumId)
+    })
     return {
         album: state.entities.albums[ownProps.match.params.albumId],
-        songs: songs,
+        songs: album_songs,
     }
 }
 

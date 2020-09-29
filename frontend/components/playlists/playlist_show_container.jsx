@@ -5,7 +5,9 @@ import { getPlaylist, clearPlaylists } from '../../actions/playlist_actions'
 const mapStateToProps = (state, ownProps) => {
     return {
         playlist: state.entities.playlists[ownProps.match.params.playlistId],
-        songs: state.entities.songs,
+        songs: Object.values(state.entities.songs),
+        albums: state.entities.albums,
+        artists: state.entities.artists,
     }
 }
 

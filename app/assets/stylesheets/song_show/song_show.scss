@@ -1,0 +1,11 @@
+.song-item{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.title-artist{
+    display:flex;
+    flex-direction: column;
+}

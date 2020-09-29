@@ -13,7 +13,7 @@ const SongsReducer = (state= {}, action) => {
             })
             return newState;
         case RECEIVE_PLAYLIST:
-            newState = action.playlist.songs
+            newState = action.object.songs
             return newState;
         case CLEAR_SONGS:
             return {};

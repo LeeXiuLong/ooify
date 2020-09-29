@@ -9,7 +9,7 @@ const PlaylistsReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_PLAYLIST:
             newState = Object.assign({}, state);
-            newState[action.playlist.id] = action.playlist;
+            newState[action.object.playlist.id] = action.object.playlist
             return newState;
         case CLEAR_PLAYLISTS:
             newState = {};

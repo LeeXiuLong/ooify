@@ -1,0 +1,10 @@
+.song-items{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    justify-content: space-between;
+}
+
+.song-items > .song-item{
+    padding: 20px;
+}

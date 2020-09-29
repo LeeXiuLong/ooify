@@ -16,6 +16,10 @@ json.artists do
     @playlist.songs.each { |song| json.set! song.artist_id, song.artist.name }
 end
 
+json.albums do 
+    @playlist.songs.each{ |song| json.set! song.album_id, song.album.name}
+end
+
 #json.playlist :songs, :playlist_songs
 #   do json.extract! @playlist
 #json.songs do
