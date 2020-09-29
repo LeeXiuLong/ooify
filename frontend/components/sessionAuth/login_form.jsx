@@ -51,7 +51,7 @@ class LoginForm extends React.Component{
                     <ul>
                         {errorItems}
                     </ul>
-                    <button className="demoUserButton" onClick={this.handleDemoSubmit}>CONTINUE AS DEMO USER</button>
+                    <div className="demoUserButton" onClick={this.handleDemoSubmit}>CONTINUE AS DEMO USER</div>
                     <h5 className="formSeperator">
                         <span>
                             OR
