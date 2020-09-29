@@ -3,15 +3,18 @@ import AlbumShow from './album_show';
 import { getAlbumTracks, clearSongs } from '../../actions/song_actions';
 import { getAlbum } from '../../actions/album_actions';
 import { getArtist } from '../../actions/artist_actions';
+import { openModal, closeModal} from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     let songs = Object.values(state.entities.songs);
     let album_songs = songs.filter(song => {
         return song.album_id === parseInt(ownProps.match.params.albumId)
     })
+
     return {
         album: state.entities.albums[ownProps.match.params.albumId],
         songs: album_songs,
+        artist: album_songs[0] ? state.entities.artists[album_songs[0].artist_id] : null
     }
 }
 
@@ -20,7 +23,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         getSongs: () => dispatch(getAlbumTracks(ownProps.match.params.albumId)),
         getAlbum: () => dispatch(getAlbum(ownProps.match.params.albumId)),
         getArtist: (artistId) => dispatch(getArtist(artistId)),
-        clearSongs: () => dispatch(clearSongs())
+        clearSongs: () => dispatch(clearSongs()),
+        openModal: () => dispatch(openModal("addToPlaylist")),
     }
 }
 

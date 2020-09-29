@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import PlaylistShow from './playlist_show';
 import { getPlaylist, clearPlaylists } from '../../actions/playlist_actions'
+import { openModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -15,6 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         getPlaylist: () => dispatch(getPlaylist(ownProps.match.params.playlistId)),
         clearPlaylists: () => dispatch(clearPlaylists()),
+        openModal: () => dispatch(openModal("addToPlaylist")),
     }
 }
 

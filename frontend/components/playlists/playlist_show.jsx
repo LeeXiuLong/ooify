@@ -27,7 +27,13 @@ class PlaylistShow extends React.Component{
             }
         })
         let songItems = song_item_props.map(song => {
-            return <SongItem key={song.song.id} song={song.song} artist={song.artist} album={song.album} />
+            return <SongItem 
+                        key={song.song.id} 
+                        song={song.song} 
+                        artist={song.artist} 
+                        album={song.album}
+                        openModal={this.props.openModal}
+                    />
         })
         return(
             <div>

@@ -14,8 +14,9 @@ class SongItem extends React.Component{
                     <Link className="artist" to={`/artists/${this.props.song.artist_id}`}>{this.props.artist}</Link>
                 </div>
                 <Link className="album-name" to={`/albums/${this.props.song.album_id}`}>{this.props.album}</Link>
-                {/* <p>{this.props.playlist_song.created_at}</p> */}
+                <audio src={this.props.song.trackUrl} controls></audio>
                 <p>{this.props.song.runtime}</p>
+                <button onClick={this.props.openModal}>Add To Playlist</button>
             </div>
         )
     }

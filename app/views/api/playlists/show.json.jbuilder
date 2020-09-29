@@ -9,8 +9,9 @@ end
 # end
 
 json.songs do
-    @playlist.songs.each { |song| json.set! song.id, song}
+    json.partial! "/api/songs/songs", songs:@playlist.songs
 end
+    # @playlist.songs.each { |song| json.set! song.id, song}
 
 json.artists do
     @playlist.songs.each { |song| json.set! song.artist_id, song.artist.name }

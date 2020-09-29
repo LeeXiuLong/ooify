@@ -8,7 +8,8 @@ const SongsReducer = (state= {}, action) => {
     switch (action.type) {
         case RECEIVE_ALBUM_TRACKS:
             newState = Object.assign({}, state);
-            action.songs.forEach(song=>{
+            let songObjects = Object.values(action.songs);
+            songObjects.forEach(song=>{
                 newState[song.id] = song
             })
             return newState;

@@ -1,5 +1,6 @@
 import React from 'react'
 import { clearSongs } from '../../actions/song_actions';
+import SongItem from '../songs/SongItem';
 
 class AlbumShow extends React.Component{
     constructor(props){
@@ -25,7 +26,14 @@ class AlbumShow extends React.Component{
         let songs = this.props.songs.map(song => {
             return (
                 <li key={song.id}>
-                    {song.title}<audio src={song.trackUrl} controls></audio>{this.props.album.name}{song.runtime}
+                    <SongItem 
+                        key={song.id} 
+                        song={song} 
+                        artist={this.props.artist} 
+                        album={this.props.album.name} 
+                        openModal={this.props.openModal} 
+                        closeModal={this.props.closeModal}
+                    />
                 </li>
             )
         })
@@ -33,6 +41,7 @@ class AlbumShow extends React.Component{
         return (
             <div>
                 <h1>{this.props.album.name}</h1>
+                <img className="albumArtwork" src={this.props.album.artworkUrl}/>
                 <ul>
                     {songs}
                 </ul>
