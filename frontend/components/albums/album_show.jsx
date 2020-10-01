@@ -14,7 +14,7 @@ class AlbumShow extends React.Component{
         console.log("got albums and songs");
         this.props.getUserPlaylists(this.props.currentUserId);
     }
-
+    
     componentWillUnmount() {
     }
 

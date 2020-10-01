@@ -1,7 +1,5 @@
 import React from 'react';
 import SongItem from '../songs/SongItem';
-import HomeContainer from '../home/home_container'
-import Home from '../home/home';
 
 class PlaylistShow extends React.Component{
     constructor(props){
