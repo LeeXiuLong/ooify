@@ -5,7 +5,8 @@ import { getAlbum, clearAlbums } from '../../actions/album_actions';
 import { getArtist } from '../../actions/artist_actions';
 import { openModal, closeModal} from '../../actions/modal_actions';
 import { getUserPlaylists } from '../../actions/playlist_actions';
-import { clearPlaylists } from '../../actions/playlist_actions'
+import { clearPlaylists } from '../../actions/playlist_actions';
+import { receiveSelectedSong } from '../../actions/song_actions'
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -26,12 +27,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return{
         getSongs: () => dispatch(getAlbumTracks(ownProps.match.params.albumId)),
         getAlbum: () => dispatch(getAlbum(ownProps.match.params.albumId)),
-        getArtist: (artistId) => dispatch(getArtist(artistId)),
+        getArtist: artistId => dispatch(getArtist(artistId)),
         clearSongs: () => dispatch(clearSongs()),
         openModal: openModalProps => dispatch(openModal(openModalProps)),
-        getUserPlaylists: (userId) => dispatch(getUserPlaylists(userId)),
+        getUserPlaylists: userId => dispatch(getUserPlaylists(userId)),
         clearPlaylists: () => dispatch(clearPlaylists()),
         clearAlbums: () => dispatch(clearAlbums()),
+        selectSong: song => dispatch(receiveSelectedSong(song)),
     }
 }
 

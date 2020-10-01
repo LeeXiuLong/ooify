@@ -33,11 +33,11 @@ class SongItem extends React.Component{
             createdAt = <div></div>
         }
 
-
+//
         return(
             <div className="song-item">
                 <div className="title-artist">
-                    <p className="title">{this.props.song.title}</p>
+                    <button onClick={() => this.props.selectSong(this.props.song)} className="title">{this.props.song.title}</button>
                     <Link className="artist" to={`/artists/${this.props.song.artist_id}`}>{this.props.artist}</Link>
                 </div>
                 <Link className="album-name" to={`/albums/${this.props.song.album_id}`}>{this.props.album}</Link>

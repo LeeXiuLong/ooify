@@ -58,6 +58,7 @@ class PlaylistShow extends React.Component{
                             playlistSong={song.playlistSong}
                             openModal={() => this.props.openModal(openModalProps)}
                             removeSongFromPlaylist={()=>this.props.removeSongFromPlaylist(playlistSongId)}
+                            selectSong = {this.props.selectSong}
                         />
                     </div>
         })

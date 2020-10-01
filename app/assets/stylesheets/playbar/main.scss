@@ -1,6 +1,12 @@
+.play-pause-button{
+    color:white;
+}
+
 .play-bar{
     background-color :rgb(26, 22, 22);
     width: 100vw;
     height: 9vh;
     position:fixed;
+    display:flex;
+    justify-content: flex-start;
 }

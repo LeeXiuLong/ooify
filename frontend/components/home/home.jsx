@@ -21,7 +21,9 @@ class Home extends React.Component{
         return(
             <div className="nav-bar-play-bar">
                 <div className="home-nav">
-                    <img src={window.white_logo} />
+                    <Link to="/home">
+                        <img src={window.white_logo} />
+                    </Link>
                     <div className="links">
                         <a href="https://github.com/LeeXiuLong/" className="github">Github</a>
                         <a href="https://www.linkedin.com/in/jourdan-ooi/" className="linkedIn">LinkedIn</a>

@@ -1,0 +1,64 @@
+.album-show{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(39, 37, 37);
+    color: white;
+    width:91vw;
+    height: 92vh;
+    float: right;
+}
+
+.album-show-header img{
+    height: 220px;
+    width: 220px;
+}
+
+.album-show-header{
+    padding-top: 70px;
+    background-color:rgb(65, 63, 63);
+    padding-bottom:20px;
+    display: flex;
+    padding-left: 30px;
+    align-items: flex-end;
+}
+
+.album-show-h1{
+    padding-left: 30px;
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.album-show-main{
+    padding-top: 40px;
+    display:flex;
+    flex-direction: column;
+    padding-left: 25px;
+    padding-right:25px;
+}
+
+.album-show-main > hr{
+    width: 100%;
+    color: grey;
+    opacity: .2;
+}
+
+.album-show-song-items{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.album-show-song-items .song-item{
+    display: flex;
+    justify-content: space-between;
+    width: 100%
+}
+
+.album-show-song-items .title-artist{
+    margin-right: 330px;
+}
+
+.album-show-song-items li{
+    width: 100%
+}

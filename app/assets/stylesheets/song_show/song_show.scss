@@ -68,15 +68,6 @@
     position: relative;
 }
 
-
-// .song-item:hover .dropdown-trigger-songs{
-//     display:block;
-// }
-
-// .dropdown-trigger-songs{
-//     display:none;
-// }
-
 .add-and-delete-playlist > li:hover{
     display:block;
     background-color: rgb(85, 85, 85);
@@ -84,4 +75,12 @@
 
 .add-and-delete-playlist > li {
     padding: 8px;
+}
+
+.dropdown-songs-button{
+    display: none;
+}
+
+.song-item:hover .dropdown-songs-button{
+    display: block;
 }

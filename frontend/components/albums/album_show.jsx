@@ -37,18 +37,29 @@ class AlbumShow extends React.Component{
                         album={this.props.album.name} 
                         openModal={()=> this.props.openModal(openModalProps)} 
                         closeModal={this.props.closeModal}
+                        selectSong = {this.props.selectSong}
                     />
                 </li>
             )
         })
 
         return (
-            <div>
-                <h1>{this.props.album.name}</h1>
-                <img className="albumArtwork" src={this.props.album.artworkUrl}/>
-                <ul>
-                    {songs}
-                </ul>
+            <div className="album-show">
+                <div className="album-show-header">
+                    <img className="albumArtwork" src={this.props.album.artworkUrl} />
+                    <h1 className="album-show-h1">{this.props.album.name}</h1>
+                </div>
+                <div className="album-show-main">
+                    <div className="song-headers">
+                        <p>TITLE</p>
+                        <p>ALBUM</p>
+                        <p><i className="fas fa-clock"></i></p>
+                    </div>
+                    <hr />
+                    <ul className="album-show-song-items">
+                        {songs}
+                    </ul>
+                </div>
             </div>
         )
 
