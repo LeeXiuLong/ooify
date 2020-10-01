@@ -35,7 +35,7 @@ export class AddPlaylistSong extends React.Component{
             song: this.props.song
         }
         return(
-                <form className="make-playlist-form">
+                <form className="add-song-to-playlist-form">
                     <button className="playlist-form-x" onClick={this.props.closeModal}>X</button>
                     <h1 className="playlist-form-header">Add to playlist</h1>
                     <button className="make-new-playlist-and-add" onClick={() => this.props.openModal(openModalProps)}>New Playlist</button>
