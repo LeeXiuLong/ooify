@@ -2,8 +2,8 @@ class Api::PlaylistSongsController < ApplicationController
 
     def create
         @playlist_song = PlaylistSong.new(playlist_song_params)
-        @playlist = Playlist.find(@playlist_song.playlist_id)
         if @playlist_song.save
+            @playlist = Playlist.find(@playlist_song.playlist_id)
             render "api/playlists/show"
         else
             render json: ["Cannot add this song"], status: 401

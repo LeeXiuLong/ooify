@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import StillWorking from './still_working';
+import { Route, Switch } from 'react-router-dom';
 import SplashContainer from './splash/splash_container';
 import LoginFormContainer from './sessionAuth/login_form_container';
 import SignUpFormContainer from '../components/sessionAuth/signup_form_container'
@@ -15,15 +14,16 @@ import PlaylistShowContainer from './playlists/playlist_show_container';
 const App = () => {
     
     return (
-        <div>
+        <div className="app">
             <PlaylistModal />
-            <Route path="/stillWorking" component={StillWorking}/>
-            <Route exact path ="/" component={SplashContainer}/>
+            <Switch>
+                <Route exact path="/" component={SplashContainer} />
+                <LoggedRoute path="/" component={HomeContainer} />
+            </Switch>
             <AuthRoute path = "/login" component={LoginFormContainer} />
             <AuthRoute path="/signup" component={SignUpFormContainer} />
             <LoggedRoute path="/artists/:artistId" component={ArtistShowContainer} />
             <LoggedRoute path="/albums/:albumId" component={AlbumShowContainer} />
-            <LoggedRoute path="/home/:userId" component={HomeContainer} />
             <LoggedRoute path = "/playlists/:playlistId" component={PlaylistShowContainer} />
         </div>
     )

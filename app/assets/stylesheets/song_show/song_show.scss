@@ -1,11 +1,79 @@
 .song-item{
     display: flex;
+    padding-left: 10px;
     width: 100%;
-    justify-content: space-between;
-    align-items: flex-end;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 10px;
 }
 
 .title-artist{
     display:flex;
     flex-direction: column;
+    width: 25%;
+    margin-right: 115px;
+}
+
+.title{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.artist{
+    font-size: 13px;
+    color: grey;
+}
+
+.album-name{
+    width: 25%;
+    margin-right: 173px;
+    font-size: 13px;
+    color: grey;
+}
+
+.created-at{
+    font-size: 13px;
+    color: grey;
+    width: 20%;
+    margin-right: 280px;
+}
+
+.clock-and-dropdown{
+    font-size: 13px;
+    color: grey;
+
+}
+
+.dropdown-trigger-songs{
+    position: relative;
+}
+
+.add-and-delete-playlist{
+    display: none;
+    position: absolute;
+    min-width: 110px;
+    background-color:rgb(56, 56, 56);
+    right:1px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.clock-and-dropdown{
+    display: flex;
+    width: 100px;
+    justify-content: space-around;
+}
+
+.dropdown-trigger-songs:hover > .add-and-delete-playlist{
+    display: block;
+    height: 65px;
+}
+
+.add-and-delete-playlist > li:hover{
+    display:block;
+    background-color: rgb(85, 85, 85);
+}
+
+.add-and-delete-playlist > li {
+    padding: 8px;
 }

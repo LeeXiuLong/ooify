@@ -1,22 +1,45 @@
 import { connect } from 'react-redux';
 import PlaylistShow from './playlist_show';
-import { getPlaylist, clearPlaylists } from '../../actions/playlist_actions'
+import { getPlaylist, clearPlaylists } from '../../actions/playlist_actions';
 import { openModal } from '../../actions/modal_actions';
+import { removeSongFromPlaylist } from '../../actions/playlist_songs_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
+    let playlist = state.entities.playlists[ownProps.match.params.playlistId];
+    let playlistSongs
+    let playlistSongIds = [];
+    let songs;
+    if(playlist){
+        playlist = playlist.playlist;
+        playlistSongs = Object.values(state.entities.playlistSongs).filter(playlistSong => {
+            return playlist.id === playlistSong.playlist_id
+        })
+        playlistSongs.forEach(playlistSong => {
+            playlistSongIds.push(playlistSong.song_id)
+        })
+        songs = Object.values(state.entities.songs).filter(song => {
+            return playlistSongIds.includes(song.id)
+        })
+    }
+
     return {
         playlist: state.entities.playlists[ownProps.match.params.playlistId],
-        songs: Object.values(state.entities.songs),
+        songs,
         albums: state.entities.albums,
+        playlistId: ownProps.match.params.playlistId,
         artists: state.entities.artists,
+        playlistSongs: state.entities.playlistSongs,
+        currentUser: state.entities.users[state.session.id],
     }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        getPlaylist: () => dispatch(getPlaylist(ownProps.match.params.playlistId)),
+        getPlaylist: playlistId => dispatch(getPlaylist(playlistId)),
         clearPlaylists: () => dispatch(clearPlaylists()),
-        openModal: () => dispatch(openModal("addToPlaylist")),
+        openModal: openModalProps => dispatch(openModal(openModalProps)),
+        removeSongFromPlaylist: songPlaylistId => dispatch(removeSongFromPlaylist(songPlaylistId))
     }
 }
 

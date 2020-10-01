@@ -14,8 +14,16 @@ const SongsReducer = (state= {}, action) => {
             })
             return newState;
         case RECEIVE_PLAYLIST:
-            newState = action.object.songs
-            return newState;
+            if(action.object.songs){
+                newState = Object.assign({}, state);
+                let keys = Object.keys(action.object.songs)
+                keys.forEach(key => {
+                    newState[key] = action.object.songs[key]
+                })
+                return newState;
+            }else{
+                return {};
+            }
         case CLEAR_SONGS:
             return {};
         default:

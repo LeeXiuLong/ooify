@@ -1,10 +1,67 @@
+.playlist-show{
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(39, 37, 37);
+    color: white;
+    width:91vw;
+    height: 92vh;
+    float: right;
+}
+
+.playlist-show-header{
+    padding-top: 70px;
+    background-color:rgb(90, 90, 90);
+    padding-left: 25px;
+    padding-bottom:20px;
+}
+
+.playlist-show-header > p{
+    font-size:12px;
+    font-weight: 700;
+}
+
+.playlist-show-header > h1{
+    font-size: 60px;
+    font-weight: 900;
+}
+
+.main-songs{
+    padding-top: 40px;
+    display:flex;
+    flex-direction: column;
+    padding-left: 25px;
+    padding-right:25px;
+}
+
+.main-songs > hr{
+    width: 100%;
+    color: grey;
+    opacity: .2;
+}
+
+.song-headers{
+    display: flex;
+    justify-content: space-between;
+    font-weight:500;
+    color: grey;
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 25px;
+}
+
+.title-artist{
+    display:flex;
+    flex-direction: column;
+}
+
+.audio{
+    display:none;
+}
+
 .song-items{
     display: flex;
     flex-direction: column;
     padding-top: 10px;
-    justify-content: space-between;
+    justify-content: flex-start;;
 }
 
-.song-items > .song-item{
-    padding: 20px;
-}
+

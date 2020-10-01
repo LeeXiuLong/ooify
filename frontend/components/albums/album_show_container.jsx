@@ -1,9 +1,12 @@
 import { connect } from 'react-redux';
 import AlbumShow from './album_show';
 import { getAlbumTracks, clearSongs } from '../../actions/song_actions';
-import { getAlbum } from '../../actions/album_actions';
+import { getAlbum, clearAlbums } from '../../actions/album_actions';
 import { getArtist } from '../../actions/artist_actions';
 import { openModal, closeModal} from '../../actions/modal_actions';
+import { getUserPlaylists } from '../../actions/playlist_actions';
+import { clearPlaylists } from '../../actions/playlist_actions'
+
 
 const mapStateToProps = (state, ownProps) => {
     let songs = Object.values(state.entities.songs);
@@ -14,7 +17,8 @@ const mapStateToProps = (state, ownProps) => {
     return {
         album: state.entities.albums[ownProps.match.params.albumId],
         songs: album_songs,
-        artist: album_songs[0] ? state.entities.artists[album_songs[0].artist_id] : null
+        artist: album_songs[0] ? state.entities.artists[album_songs[0].artist_id] : null,
+        currentUserId: state.session.id
     }
 }
 
@@ -24,7 +28,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         getAlbum: () => dispatch(getAlbum(ownProps.match.params.albumId)),
         getArtist: (artistId) => dispatch(getArtist(artistId)),
         clearSongs: () => dispatch(clearSongs()),
-        openModal: () => dispatch(openModal("addToPlaylist")),
+        openModal: openModalProps => dispatch(openModal(openModalProps)),
+        getUserPlaylists: (userId) => dispatch(getUserPlaylists(userId)),
+        clearPlaylists: () => dispatch(clearPlaylists()),
+        clearAlbums: () => dispatch(clearAlbums()),
     }
 }
 

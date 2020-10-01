@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PlaylistFormContainer from './playlists/playlist_form_container';
-import AddPlaylistSong from './playlists/add_playlist_song';
+import AddPlaylistSongContainer from './playlists/add_playlist_song_containter';
 
 class PlaylistModal extends React.Component {
     constructor(props){
@@ -9,9 +9,9 @@ class PlaylistModal extends React.Component {
     }
 
     render(){
-        if(!this.props.modal){
+        if(!this.props.type){
             return null;
-        } else if (this.props.modal === "makePlaylist"){
+        } else if (this.props.type === "makePlaylist"){
             return (
                 <div className="modal-background">
                     <div className="modal" onClick={e => e.stopPropagation()}>
@@ -19,11 +19,11 @@ class PlaylistModal extends React.Component {
                     </div>
                 </div>
             )
-        } else if (this.props.modal === "addToPlaylist"){
+        } else if (this.props.type === "addToPlaylist"){
             return(
-                <div className="modal-background">
-                    <div className="modal" onClick={e => e.stopPropagation()}>
-                        <AddPlaylistSong />
+                <div className="modal-background-add-playlist">
+                    <div className="modal-add-playlist" onClick={e => e.stopPropagation()}>
+                        <AddPlaylistSongContainer />
                     </div>
                 </div>
             )
@@ -33,7 +33,7 @@ class PlaylistModal extends React.Component {
 
 const mapStateToProps = state => {
     return{
-        modal: state.ui.modal,
+        type: state.ui.modal.type,
     }
 }
 

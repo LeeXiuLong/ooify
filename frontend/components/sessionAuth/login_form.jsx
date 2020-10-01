@@ -58,7 +58,7 @@ class LoginForm extends React.Component{
                         </span>
                     </h5>
                     <label>
-                        <p className="inputLabel">Email address or username</p>
+                        <p className="inputLabel">Email address</p>
                         <input 
                             type="text"
                             value={this.state.email}

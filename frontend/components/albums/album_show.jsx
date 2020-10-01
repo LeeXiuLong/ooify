@@ -11,11 +11,11 @@ class AlbumShow extends React.Component{
     componentDidMount(){
         this.props.getSongs()
             .then(() => this.props.getAlbum());
-        console.log("got albums and songs")
+        console.log("got albums and songs");
+        this.props.getUserPlaylists(this.props.currentUserId);
     }
 
     componentWillUnmount() {
-        this.props.clearSongs();
     }
 
     render(){
@@ -24,6 +24,10 @@ class AlbumShow extends React.Component{
         }
 
         let songs = this.props.songs.map(song => {
+            let openModalProps = {
+                type: "addToPlaylist",
+                song: song
+            }
             return (
                 <li key={song.id}>
                     <SongItem 
@@ -31,7 +35,7 @@ class AlbumShow extends React.Component{
                         song={song} 
                         artist={this.props.artist} 
                         album={this.props.album.name} 
-                        openModal={this.props.openModal} 
+                        openModal={()=> this.props.openModal(openModalProps)} 
                         closeModal={this.props.closeModal}
                     />
                 </li>

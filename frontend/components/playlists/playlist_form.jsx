@@ -18,8 +18,14 @@ class PlaylistForm extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        this.props.makePlaylist(this.state)
-            .then(this.props.closeModal());
+        if(this.props.song){
+            this.props.makePlaylistWithSong(this.state, this.props.song)
+                .then(this.props.closeModal());
+        }else{
+            this.props.makePlaylist(this.state)
+                .then(this.props.closeModal());
+        }
+        
     }
 
     render(){

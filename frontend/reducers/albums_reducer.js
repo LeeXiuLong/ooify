@@ -1,4 +1,4 @@
-import {RECEIVE_ALBUM, RECEIVE_DISCO} from '../actions/album_actions'
+import {RECEIVE_ALBUM, RECEIVE_DISCO, CLEAR_ALBUMS} from '../actions/album_actions'
 import { RECEIVE_PLAYLIST } from '../actions/playlist_actions'
 
 const AlbumsReducer = (state= {}, action) => {
@@ -17,8 +17,18 @@ const AlbumsReducer = (state= {}, action) => {
             })
             return newState;
         case RECEIVE_PLAYLIST:
-            newState = action.object.albums;
-            return newState;
+            if(action.object.albums){
+                newState = Object.assign({}, state);
+                let keys = Object.keys(action.object.albums);
+                keys.forEach(key => {
+                    newState[key] = action.object.albums[key];
+                })
+                return newState;
+            }else{
+                return {};
+            }
+        case CLEAR_ALBUMS:
+            return {};
         default:
             return state;
     }

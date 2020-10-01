@@ -2,18 +2,24 @@ import { connect } from 'react-redux';
 import Home from './home';
 import {openModal} from '../../actions/modal_actions';
 import { } from '../../actions/session_actions';
+import {getUserPlaylists} from '../../actions/playlist_actions';
 
-const mapStateToProps = (state, ownProps) => {
-    let currentId = ownProps.match.params.userId;
+const mapStateToProps = (state) => {
+    
     return {
-        playlists: state.entities.users[currentId].playlists
+        playlists: Object.values(state.entities.playlists),
+        currentUserId: state.session.id,
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
+    let openModalProps = {
+        type: "makePlaylist",
+        song: null,
+    }
     return {
-        openModal:() => dispatch(openModal("makePlaylist"))
-        // getUser:() => dispatch
+        openModal: () => dispatch(openModal(openModalProps)),
+        getPlaylists: userId => dispatch(getUserPlaylists(userId)),
     }
 }
 

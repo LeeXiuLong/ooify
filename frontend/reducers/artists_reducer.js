@@ -11,8 +11,16 @@ const ArtistsReducer = (state= {}, action) => {
             newState[action.artist.id] = action.artist
             return newState;
         case RECEIVE_PLAYLIST:
-            newState = action.object.artists;
-            return newState;
+            if(!action.object.artists){
+                return {};
+            }else{
+                newState = Object.assign({}, state);
+                let keys = Object.keys(action.object.artists);
+                keys.forEach(key => {
+                    newState[key] = action.object.artists[key];
+                })
+                return newState;
+            }
         default:
             return state;
     }
