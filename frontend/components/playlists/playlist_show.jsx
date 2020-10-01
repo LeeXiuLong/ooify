@@ -4,6 +4,8 @@ import SongItem from '../songs/SongItem';
 class PlaylistShow extends React.Component{
     constructor(props){
         super(props);
+
+        this.deleteThisPlaylist = this.deleteThisPlaylist.bind(this);
     }
 
     componentDidMount(){
@@ -14,6 +16,11 @@ class PlaylistShow extends React.Component{
         if(this.props.match.params.playlistId !== prevProps.match.params.playlistId){
             this.props.getPlaylist(this.props.playlistId);
         }
+    }
+
+    deleteThisPlaylist(){
+        this.props.deletePlaylist(this.props.playlistId)
+            .then(() => this.props.history.push("/home"))
     }
     
     render(){
@@ -64,11 +71,14 @@ class PlaylistShow extends React.Component{
                     <p>{this.props.currentUser.name}</p>
                 </div>
                 <div className="main-songs">
+                    <button onClick={this.deleteThisPlaylist} className="delete-playlist-button">
+                        Delete This Playlist
+                    </button>
                     <div className="song-headers">
                         <p>TITLE</p>
                         <p>ALBUM</p>
                         <p>DATE ADDED</p>
-                        <p>CLOCK</p>
+                        <p><i className="fas fa-clock"></i></p>
                     </div>
                     <hr/>
                     <ul className="song-items">

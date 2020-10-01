@@ -2,6 +2,7 @@ export const RECEIVE_SONG = "RECEIVE_SONG";
 export const RECEIVE_ALBUM_TRACKS = "RECEIVE_SONGS";
 export const CLEAR_SONGS = "CLEAR_SONGS"
 import * as mainAPIUtil from '../util/main_api_util'
+export const RECEIVE_SELECTED_SONG = 'RECEIVE_SELECTED_SONG'
 
 export const receiveSong = song => {
     return {
@@ -15,6 +16,14 @@ export const receiveAlbumTracks = songs => {
         type: RECEIVE_ALBUM_TRACKS,
         songs
     }
+}
+
+export const receiveSelectedSong = song => {
+    return{
+        type: RECEIVE_SELECTED_SONG,
+        song
+    }
+    
 }
 
 export const getAlbumTracks = albumId => {

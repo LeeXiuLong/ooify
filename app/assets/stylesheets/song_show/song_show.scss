@@ -7,6 +7,10 @@
     padding-bottom: 10px;
 }
 
+.song-item:hover {
+    background-color:  rgb(61, 58, 58);
+}
+
 .title-artist{
     display:flex;
     flex-direction: column;
@@ -44,18 +48,14 @@
 
 }
 
-.dropdown-trigger-songs{
-    position: relative;
-}
-
 .add-and-delete-playlist{
-    display: none;
     position: absolute;
     min-width: 110px;
     background-color:rgb(56, 56, 56);
     right:1px;
     font-size: 12px;
     font-weight: 600;
+    top: 100%
 }
 
 .clock-and-dropdown{
@@ -64,10 +64,18 @@
     justify-content: space-around;
 }
 
-.dropdown-trigger-songs:hover > .add-and-delete-playlist{
-    display: block;
-    height: 65px;
+.dropdown-songs-button{
+    position: relative;
 }
+
+
+// .song-item:hover .dropdown-trigger-songs{
+//     display:block;
+// }
+
+// .dropdown-trigger-songs{
+//     display:none;
+// }
 
 .add-and-delete-playlist > li:hover{
     display:block;

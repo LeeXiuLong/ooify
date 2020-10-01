@@ -44,14 +44,14 @@ export const getPlaylist = playlistId => {
 export const editPlaylist = playlist => {
     return $.ajax({
         method: "PATCH",
-        url: `/api/playlist/${playlist.id}`
+        url: `/api/playlists/${playlist.id}`
     })
 }
 
-export const deletePlaylist = playlist => {
+export const deletePlaylist = playlistId => {
     return $.ajax({
         method: "DELETE",
-        url: `/api/playlist/${playlist.id}`
+        url: `/api/playlists/${playlistId}`
     })
 }
 
@@ -81,5 +81,12 @@ export const getUserPlaylists = userId => {
     return $.ajax({
         method: "GET",
         url: `/api/users/${userId}/playlists`,
+    })
+}
+
+export const getAlbums = () => {
+    return $.ajax({
+        method: "GET",
+        url: "/api/albums",
     })
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PlayBarContainer from '../playbar/playbar_container'
 
 class Home extends React.Component{
     constructor(props){
@@ -29,7 +30,7 @@ class Home extends React.Component{
                     <div className="playlists">
                         <p className="playlist-label">PLAYLISTS</p>
                         <button className="create-playlist" onClick={this.props.openModal}>
-                            <i class="fas fa-plus"></i>
+                            <i className="fas fa-plus"></i>
                             <p className="create-playlist-label">Create Playlist</p>
                         </button>
                     </div>
@@ -40,7 +41,7 @@ class Home extends React.Component{
                         {playlists}
                     </ul>
                 </div>
-                <div className="play-bar" />  
+                <PlayBarContainer />  
             </div>
         )
     }

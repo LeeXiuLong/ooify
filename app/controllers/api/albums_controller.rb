@@ -6,7 +6,11 @@ class Api::AlbumsController < ApplicationController
     end
 
     def index
-        @albums = Album.where(artist_id: params[:artist_id])
+        if params[:artist_id]
+            @albums = Album.where(artist_id: params[:artist_id])
+        else
+            @albums = Album.all
+        end
         render :index
     end
 end

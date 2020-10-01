@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PlaylistShow from './playlist_show';
-import { getPlaylist, clearPlaylists } from '../../actions/playlist_actions';
+import { getPlaylist, clearPlaylists, deletePlaylist } from '../../actions/playlist_actions';
 import { openModal } from '../../actions/modal_actions';
 import { removeSongFromPlaylist } from '../../actions/playlist_songs_actions';
 
@@ -39,7 +39,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         getPlaylist: playlistId => dispatch(getPlaylist(playlistId)),
         clearPlaylists: () => dispatch(clearPlaylists()),
         openModal: openModalProps => dispatch(openModal(openModalProps)),
-        removeSongFromPlaylist: songPlaylistId => dispatch(removeSongFromPlaylist(songPlaylistId))
+        removeSongFromPlaylist: songPlaylistId => dispatch(removeSongFromPlaylist(songPlaylistId)),
+        deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId)),
     }
 }
 

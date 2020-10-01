@@ -39,7 +39,11 @@ class Api::PlaylistsController < ApplicationController
 
     def destroy
         @playlist = Playlist.find(params[:id])
-        @playlist.destroy
+        @user = User.find(@playlist.user_id)
+        if @playlist.destroy
+            @playlists = @user.playlists
+            render "/api/playlists/index"
+        end
     end
 
     private

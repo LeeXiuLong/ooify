@@ -10,6 +10,7 @@ import AlbumShowContainer from './albums/album_show_container'
 import PlaylistModal from './Modal.jsx';
 import HomeContainer from './home/home_container'
 import PlaylistShowContainer from './playlists/playlist_show_container';
+import AlbumIndexContainer from './albums/album_index_container';
 
 const App = () => {
     
@@ -18,13 +19,14 @@ const App = () => {
             <PlaylistModal />
             <Switch>
                 <Route exact path="/" component={SplashContainer} />
+                <AuthRoute path="/login" component={LoginFormContainer} />
+                <AuthRoute path="/signup" component={SignUpFormContainer} />
                 <LoggedRoute path="/" component={HomeContainer} />
             </Switch>
-            <AuthRoute path = "/login" component={LoginFormContainer} />
-            <AuthRoute path="/signup" component={SignUpFormContainer} />
             <LoggedRoute path="/artists/:artistId" component={ArtistShowContainer} />
             <LoggedRoute path="/albums/:albumId" component={AlbumShowContainer} />
             <LoggedRoute path = "/playlists/:playlistId" component={PlaylistShowContainer} />
+            <LoggedRoute path="/home" component={AlbumIndexContainer} />
         </div>
     )
 }

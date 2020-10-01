@@ -24,6 +24,13 @@ export const clearPlaylists = () => {
     }
 }
 
+export const deletePlaylist = playlistId => {
+    return dispatch => {
+        return mainAPIUtil.deletePlaylist(playlistId)
+            .then(playlists => dispatch(receivePlaylists(playlists)))
+    }
+}
+
 export const getPlaylist = playlistId => {
     return dispatch => {
         return mainAPIUtil.getPlaylist(playlistId)

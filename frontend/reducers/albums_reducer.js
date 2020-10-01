@@ -1,4 +1,4 @@
-import {RECEIVE_ALBUM, RECEIVE_DISCO, CLEAR_ALBUMS} from '../actions/album_actions'
+import {RECEIVE_ALBUM, RECEIVE_DISCO, CLEAR_ALBUMS, RECEIVE_ALBUMS} from '../actions/album_actions'
 import { RECEIVE_PLAYLIST } from '../actions/playlist_actions'
 
 const AlbumsReducer = (state= {}, action) => {
@@ -27,6 +27,8 @@ const AlbumsReducer = (state= {}, action) => {
             }else{
                 return {};
             }
+        case RECEIVE_ALBUMS:
+            return action.albums;
         case CLEAR_ALBUMS:
             return {};
         default:

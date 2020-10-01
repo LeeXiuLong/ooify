@@ -87,6 +87,7 @@ class SignupForm extends React.Component{
     }
 
     handleSubmit(e){
+        debugger
         e.preventDefault()
         let birthdate = this.state.month + this.state.day + this.state.year;
         let userSubmit={
@@ -101,6 +102,7 @@ class SignupForm extends React.Component{
             .then(() => this.props.history.push("/"));
     }
     render(){
+        debugger
         return(
             <div className="signupPage">
                 <img src={window.black_logo} />
