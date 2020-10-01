@@ -21,7 +21,10 @@ json.artists do
 end
 
 json.albums do 
-    playlist.songs.each{ |song| json.set! song.album_id, song.album.name}
+    playlist.songs.each do |song| 
+        json.set! song.album_id, song.album.name
+        json.artworkURL url_for(song.album.album_artwork)
+    end
 end
 
 #json.playlist :songs, :playlist_songs

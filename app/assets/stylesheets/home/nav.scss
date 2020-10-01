@@ -34,6 +34,10 @@
     padding-left: 14px;
 }
 
+.home-nav > .links > a:hover{
+    color: white;
+}
+
 .playlists{
     padding-top: 20px;
     padding-left: 14px;
@@ -45,6 +49,10 @@
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;
     padding-bottom: 10px;
+}
+
+.create-playlist:hover{
+    color: white;
 }
 
 .create-playlist{
@@ -84,6 +92,10 @@
     padding: 8px;
     font-size: 13px;
     font-weight:600;
+}
+
+.playlist:hover {
+    color: white;
 }
 
 ::-webkit-scrollbar {

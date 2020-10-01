@@ -19,7 +19,7 @@ class AlbumShow extends React.Component{
     }
 
     render(){
-        if(this.props.songs.length < 1 || !this.props.songs[0] || !this.props.album){
+        if (this.props.songs.length < 1 || !this.props.songs[0] || !this.props.album){
             return null
         }
 

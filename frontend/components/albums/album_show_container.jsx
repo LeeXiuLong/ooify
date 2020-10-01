@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => {
     let album_songs = songs.filter(song => {
         return song.album_id === parseInt(ownProps.match.params.albumId)
     })
-
+    
     return {
         album: state.entities.albums[ownProps.match.params.albumId],
         songs: album_songs,
