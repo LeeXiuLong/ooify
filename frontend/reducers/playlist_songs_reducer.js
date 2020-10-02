@@ -8,11 +8,7 @@ const PlaylistSongReducer = (state= {}, action) => {
         case RECEIVE_PLAYLIST:
             newState = Object.assign({}, state);
             if(action.object.playlist_songs){
-                let keys = Object.keys(action.object.playlist_songs);
-                keys.forEach(key => {
-                    newState[key] = action.object.playlist_songs[key];
-                })
-                return newState;
+                return action.object.playlist_songs;
             }else{
                 return {};
             }
