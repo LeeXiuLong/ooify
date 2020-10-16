@@ -24,7 +24,6 @@ class ArtistShow extends React.Component{
                 </Link>
             </li>
         })
-        console.log(this.props)
         return(
             <div>
                 <h1>{this.props.artist.name}</h1>

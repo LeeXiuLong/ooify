@@ -1,5 +1,6 @@
 import React from 'react';
 import SongItem from '../songs/SongItem';
+import HomeAuthContainer from '../homeAuth/home_auth_container'
 
 class PlaylistShow extends React.Component{
     constructor(props){
@@ -65,11 +66,14 @@ class PlaylistShow extends React.Component{
         return(
             <div className="playlist-show">
                 <div className="playlist-show-header">
-                    <p>PLAYLIST</p>
-                    <h1>
-                        {this.props.playlist.playlist.name}
-                    </h1>
-                    <p>{this.props.currentUser.name}</p>
+                    <div className="playlist-header-info">
+                        <p>PLAYLIST</p>
+                        <h1>
+                            {this.props.playlist.playlist.name}
+                        </h1>
+                        <p>{this.props.currentUser.name}</p>
+                    </div>
+                    <HomeAuthContainer />
                 </div>
                 <div className="main-songs">
                     <button onClick={this.deleteThisPlaylist} className="delete-playlist-button">

@@ -19,7 +19,6 @@ class SongItem extends React.Component{
 
     handleClick(){
         this.setState({show: !this.state.show})
-        console.log(this.state.show)
     }
 
     render(){

@@ -5,6 +5,7 @@ class SignupForm extends React.Component{
     constructor(props){
         super(props);
 
+        
         this.state = {
             email: "",
             password: "",
@@ -14,8 +15,8 @@ class SignupForm extends React.Component{
             day: "",
             gender: "",
             confirmEmail: "",
-            emailError:"",
-            confirmEmailError:"",
+            emailError: "",
+            confirmEmailError: "",
             passwordError: "",
             nameError:"",
             monthError: "",
@@ -87,7 +88,6 @@ class SignupForm extends React.Component{
     }
 
     handleSubmit(e){
-        debugger
         e.preventDefault()
         let birthdate = this.state.month + this.state.day + this.state.year;
         let userSubmit={
@@ -97,18 +97,24 @@ class SignupForm extends React.Component{
             birthdate,
             gender: this.state.gender,
         }
-        console.log(userSubmit);
         this.props.processForm(userSubmit)
-            .then(() => this.props.history.push("/"));
+        .then(() => this.props.history.push("/"))
+        console.log(this.state);
     }
     render(){
-        debugger
+
+        let errors = this.props.errors.map(error => {
+            return <li className="signupError">{error.split(" ").slice(1).join(" ")}</li>
+        })
         return(
             <div className="signupPage">
                 <img src={window.black_logo} />
                 <h2>Sign up for free to start listening.</h2>
                 <form className="signupForm" onSubmit={this.handleSubmit}>
                     <h5>Sign up with your email address</h5>
+                    <ul className="signupError">
+                        {errors}
+                    </ul>
                     <label htmlFor="email">
                         What's your email?
                     </label>

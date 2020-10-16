@@ -1,6 +1,7 @@
 import React from 'react'
 import { clearSongs } from '../../actions/song_actions';
 import SongItem from '../songs/SongItem';
+import HomeAuthContainer from '../homeAuth/home_auth_container'
 
 class AlbumShow extends React.Component{
     constructor(props){
@@ -11,7 +12,6 @@ class AlbumShow extends React.Component{
     componentDidMount(){
         this.props.getSongs()
             .then(() => this.props.getAlbum());
-        console.log("got albums and songs");
         this.props.getUserPlaylists(this.props.currentUserId);
     }
     
@@ -46,8 +46,11 @@ class AlbumShow extends React.Component{
         return (
             <div className="album-show">
                 <div className="album-show-header">
-                    <img className="albumArtwork" src={this.props.album.artworkUrl} />
-                    <h1 className="album-show-h1">{this.props.album.name}</h1>
+                    <div className="album-artwork-and-title">
+                        <img className="albumArtwork" src={this.props.album.artworkUrl} />
+                        <h1 className="album-show-h1">{this.props.album.name}</h1>
+                    </div>
+                    <HomeAuthContainer />
                 </div>
                 <div className="album-show-main">
                     <div className="song-headers">

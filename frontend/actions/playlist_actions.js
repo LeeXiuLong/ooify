@@ -60,7 +60,6 @@ export const makePlaylistWithSong = (playlist, song) => {
                     song_id: song.id,
                     playlist_id: object.playlist.id
                 }
-                debugger
                 return mainAPIUtil.addSongToPlaylist(playlistSong)
                     .then(playlist => dispatch(receivePlaylist(playlist)))
             })

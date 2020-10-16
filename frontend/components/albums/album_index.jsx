@@ -1,5 +1,6 @@
 import React from 'react';
 import AlbumIndexItem from './album_index_item'
+import HomeAuthContainer from '../homeAuth/home_auth_container'
 
 class AlbumIndex extends React.Component{
     constructor(props){
@@ -29,6 +30,7 @@ class AlbumIndex extends React.Component{
             <div className="album-index">
                 <div className="album-index-header">
                     <h1>Albums</h1>
+                    <HomeAuthContainer />
                 </div>
                 <div className="album-index-main">
                     <ul className="album-index-items">

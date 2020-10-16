@@ -21,6 +21,13 @@
     display: flex;
     padding-left: 30px;
     align-items: flex-end;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+
+.album-artwork-and-title{
+    display: flex;
+    align-items:flex-end;
 }
 
 .album-show-h1{
