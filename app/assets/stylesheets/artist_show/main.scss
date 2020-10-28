@@ -1,0 +1,16 @@
+.album-index-main{
+    padding-top: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.album-index-items{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.album-item-section{
+    display:flex;
+    justify-content: space-evenly;
+}
