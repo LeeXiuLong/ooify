@@ -11,14 +11,13 @@ import { receiveSelectedSong } from '../../actions/song_actions'
 
 const mapStateToProps = (state, ownProps) => {
     let songs = Object.values(state.entities.songs);
-    let album_songs = songs.filter(song => {
-        return song.album_id === parseInt(ownProps.match.params.albumId)
-    })
-    
+    let album = state.entities.albums[ownProps.match.params.albumId];
+    let artist = state.entities.albums[ownProps.match.params.albumId] ? state.entities.albums[ownProps.match.params.albumId].artist : null
+
     return {
-        album: state.entities.albums[ownProps.match.params.albumId],
-        songs: album_songs,
-        artist: album_songs[0] ? state.entities.artists[album_songs[0].artist_id] : null,
+        album,
+        songs,
+        artist,
         currentUserId: state.session.id
     }
 }

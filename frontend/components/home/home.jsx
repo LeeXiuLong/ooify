@@ -15,9 +15,11 @@ class Home extends React.Component{
         if(!this.props.playlists){
             return null;
         }
+
         let playlists = this.props.playlists.map(playlistObject => {
             return <Link className="playlist" key={playlistObject.playlist.id} to={`/playlists/${playlistObject.playlist.id}`}>{playlistObject.playlist.name}</Link>
         })
+        
         return(
             <div className="nav-bar-play-bar">
                 <div className="home-nav">

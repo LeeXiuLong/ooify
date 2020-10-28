@@ -17,7 +17,7 @@ end
     # @playlist.songs.each { |song| json.set! song.id, song}
 
 json.artists do
-    playlist.songs.each { |song| json.set! song.artist_id, song.artist.name }
+    playlist.songs.each { |song| json.set! song.artist_id, song.artist }
 end
 
 json.albums do 

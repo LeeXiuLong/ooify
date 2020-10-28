@@ -19,9 +19,10 @@ const mapStateToProps = (state, ownProps) => {
         playlistSongs.forEach(playlistSong => {
             playlistSongIds.push(playlistSong.song_id)
         })
-        songs = Object.values(state.entities.songs).filter(song => {
-            return playlistSongIds.includes(song.id)
-        })
+        songs = Object.values(state.entities.songs)
+        // .filter(song => {
+        //     return playlistSongIds.includes(song.id)
+        // })
     }
 
     return {

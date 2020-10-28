@@ -37,7 +37,7 @@ class SongItem extends React.Component{
             <div className="song-item">
                 <div className="title-artist">
                     <button onClick={() => this.props.selectSong(this.props.song)} className="title">{this.props.song.title}</button>
-                    <Link className="artist" to={`/artists/${this.props.song.artist_id}`}>{this.props.artist}</Link>
+                    <Link className="artist" to={`/artists/${this.props.song.artist_id}`}>{this.props.artist.name}</Link>
                 </div>
                 <Link className="album-name" to={`/albums/${this.props.song.album_id}`}>{this.props.album}</Link>
                 <audio className="audio" src={this.props.song.trackUrl} controls></audio>

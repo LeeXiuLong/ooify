@@ -1,5 +1,8 @@
 import { RECEIVE_ARTIST } from '../actions/artist_actions';
-import { RECEIVE_PLAYLIST } from '../actions/playlist_actions'
+import { RECEIVE_PLAYLIST } from '../actions/playlist_actions';
+import { RECEIVE_ALBUM } from '../actions/album_actions';
+
+
 
 const ArtistsReducer = (state= {}, action) => {
     Object.freeze(state);
@@ -14,13 +17,18 @@ const ArtistsReducer = (state= {}, action) => {
             if(!action.object.artists){
                 return {};
             }else{
-                newState = Object.assign({}, state);
-                let keys = Object.keys(action.object.artists);
-                keys.forEach(key => {
-                    newState[key] = action.object.artists[key];
-                })
-                return newState;
+                // newState = Object.assign({}, state);
+                // let keys = Object.keys(action.object.artists);
+                // keys.forEach(key => {
+                //     newState[key] = action.object.artists[key];
+                // })
+                // return newState;
+                return action.object.artists;
             }
+        case RECEIVE_ALBUM:
+            newState = {};
+            newState[action.album.artist.id] = action.album.artist
+            return newState;
         default:
             return state;
     }

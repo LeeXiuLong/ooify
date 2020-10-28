@@ -11,10 +11,7 @@ const AlbumsReducer = (state= {}, action) => {
             newState[action.album.id] = action.album;
             return newState;
         case RECEIVE_DISCO:
-            newState = Object.assign({}, state);
-            action.albums.forEach(album => {
-                newState[album.id] = album
-            })
+            newState = action.albums
             return newState;
         case RECEIVE_PLAYLIST:
             if(action.object.albums){

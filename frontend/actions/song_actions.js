@@ -1,5 +1,5 @@
 export const RECEIVE_SONG = "RECEIVE_SONG";
-export const RECEIVE_ALBUM_TRACKS = "RECEIVE_SONGS";
+export const RECEIVE_ALBUM_TRACKS = "RECEIVE_ALBUM_TRACKS";
 export const CLEAR_SONGS = "CLEAR_SONGS"
 import * as mainAPIUtil from '../util/main_api_util'
 export const RECEIVE_SELECTED_SONG = 'RECEIVE_SELECTED_SONG'

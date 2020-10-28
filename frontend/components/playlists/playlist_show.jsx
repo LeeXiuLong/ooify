@@ -25,10 +25,12 @@ class PlaylistShow extends React.Component{
     }
     
     render(){
-        let dontRender = Object.values(this.props.albums).some(album=>{
-            return typeof album === 'object'
-        })
-        if(!this.props.playlist || dontRender || !this.props.songs || !this.props.albums){
+        // let dontRender = Object.values(this.props.albums).some(album=>{
+        //     return typeof album === 'object'
+        // })
+
+        if(!this.props.playlist || !this.props.songs || !this.props.albums){
+            debugger
             return null;
         }
 
@@ -63,6 +65,7 @@ class PlaylistShow extends React.Component{
                         />
                     </div>
         })
+        debugger
         return(
             <div className="playlist-show">
                 <div className="playlist-show-header">

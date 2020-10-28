@@ -16,10 +16,12 @@ class AlbumShow extends React.Component{
     }
     
     componentWillUnmount() {
+        this.props.clearAlbums();
+        this.props.clearSongs();
     }
 
     render(){
-        if (this.props.songs.length < 1 || !this.props.songs[0] || !this.props.album){
+        if (this.props.songs.length < 1 || !this.props.songs[0] || !this.props.album || !this.props.artist){
             return null
         }
 

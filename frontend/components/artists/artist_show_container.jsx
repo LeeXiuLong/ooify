@@ -5,7 +5,6 @@ import ArtistShow from './artist_show';
 
 const mapStateToProps = (state, ownProps) => {
     let albums = Object.values(state.entities.albums)
-    
 
     let artist_albums = albums.map(album=>{
         if(album.artist_id === parseInt(ownProps.match.params.artistId)){
@@ -18,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
     
     return{
         artist: state.entities.artists[ownProps.match.params.artistId],
-        albums: artist_albums,
+        albums,
     }
 }
 
