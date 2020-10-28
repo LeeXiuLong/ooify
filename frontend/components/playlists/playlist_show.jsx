@@ -47,25 +47,37 @@ class PlaylistShow extends React.Component{
                 playlistSong,
             }
         })
+
+
+
         let songItems = song_item_props.map(song => {
             let openModalProps = {
                 type: "addToPlaylist",
                 song: song.song,
             }
-            let playlistSongId = song.playlistSong.id
-            return <div key={song.song.id}>
-                        <SongItem
-                            song={song.song}
-                            artist={song.artist}
-                            album={song.album}
-                            playlistSong={song.playlistSong}
-                            openModal={() => this.props.openModal(openModalProps)}
-                            removeSongFromPlaylist={()=>this.props.removeSongFromPlaylist(playlistSongId)}
-                            selectSong = {this.props.selectSong}
-                        />
-                    </div>
+            debugger
+            
+            if(song && song.playlistSong){
+                let playlistSongId = song.playlistSong.id;
+
+                return <div key={song.song.id}>
+                    <SongItem
+                        song={song.song}
+                        artist={song.artist}
+                        album={song.album}
+                        playlistSong={song.playlistSong}
+                        openModal={() => this.props.openModal(openModalProps)}
+                        removeSongFromPlaylist={() => this.props.removeSongFromPlaylist(playlistSongId)}
+                        selectSong={this.props.selectSong}
+                    />
+                </div>
+            }
+            
         })
         debugger
+
+
+
         return(
             <div className="playlist-show">
                 <div className="playlist-show-header">
