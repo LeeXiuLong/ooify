@@ -28,9 +28,13 @@ class ArtistShow extends React.Component{
             </div>);
         }
 
+        let backgroundStyle = {
+            backgroundImage: `url(${this.props.artist.proPicUrl})`
+        }
+
         return(
-            <div className="album-index">
-                <div className="album-index-header">
+            <div className="artist-show">
+                <div className="artist-show-header" style={backgroundStyle}>
                     <h1>{this.props.artist.name}</h1>
                     <HomeAuthContainer />
                 </div>
