@@ -19,6 +19,10 @@ class PlaylistShow extends React.Component{
         }
     }
 
+    componentWillUnmount(){
+        this.props.clearPlaylistSongs();
+    }
+
     deleteThisPlaylist(){
         this.props.deletePlaylist(this.props.playlistId)
             .then(() => this.props.history.push("/home"))
@@ -30,7 +34,6 @@ class PlaylistShow extends React.Component{
         // })
 
         if(!this.props.playlist || !this.props.songs || !this.props.albums){
-            debugger
             return null;
         }
 
@@ -38,7 +41,7 @@ class PlaylistShow extends React.Component{
 
         let song_item_props = this.props.songs.map(song => {
             let playlistSong = Object.values(this.props.playlistSongs).find(playlistSong => {
-                return song.id === playlistSong.song_id;
+                return song.id === playlistSong.song_id
             })
             return {
                 song,
@@ -55,7 +58,6 @@ class PlaylistShow extends React.Component{
                 type: "addToPlaylist",
                 song: song.song,
             }
-            debugger
             
             if(song && song.playlistSong){
                 let playlistSongId = song.playlistSong.id;
@@ -74,7 +76,6 @@ class PlaylistShow extends React.Component{
             }
             
         })
-        debugger
 
 
 

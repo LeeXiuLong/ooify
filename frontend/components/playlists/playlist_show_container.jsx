@@ -4,6 +4,7 @@ import { getPlaylist, clearPlaylists, deletePlaylist } from '../../actions/playl
 import { openModal } from '../../actions/modal_actions';
 import { removeSongFromPlaylist } from '../../actions/playlist_songs_actions';
 import { receiveSelectedSong } from '../../actions/song_actions';
+import { clearPlaylistSongs } from '../../actions/playlist_songs_actions'
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -44,6 +45,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         removeSongFromPlaylist: songPlaylistId => dispatch(removeSongFromPlaylist(songPlaylistId)),
         deletePlaylist: playlistId => dispatch(deletePlaylist(playlistId)),
         selectSong: song => dispatch(receiveSelectedSong(song)),
+        clearPlaylistSongs: () => dispatch(clearPlaylistSongs())
     }
 }
 

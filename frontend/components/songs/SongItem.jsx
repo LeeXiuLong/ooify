@@ -33,7 +33,6 @@ class SongItem extends React.Component{
         }
 
 //
-        debugger
         return(
             <div className="song-item">
                 <div className="title-artist">

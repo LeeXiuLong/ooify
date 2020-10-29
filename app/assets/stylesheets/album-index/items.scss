@@ -1,3 +1,8 @@
+.album-item-section{
+    padding-top: 15px;
+}
+
+
 .album-index-item{
     width: 15%;
     display:flex;
@@ -6,6 +11,7 @@
     align-items: center;
 }
 .album-index-item .album-name{
+    padding-top: 5px;
     font-size: 15px;
     width: 100%;
     font-weight: 500;

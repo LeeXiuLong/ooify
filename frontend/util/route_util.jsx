@@ -7,7 +7,6 @@ const Auth = ({ component: Component, path, loggedIn, exact}) => (
         path={path}
         exact ={exact}
         render={props => { 
-            debugger
             return !loggedIn ? <Component {...props} /> : <Redirect to="/" />
          }  
         }

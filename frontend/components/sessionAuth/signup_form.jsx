@@ -99,7 +99,6 @@ class SignupForm extends React.Component{
         }
         this.props.processForm(userSubmit)
         .then(() => this.props.history.push("/"))
-        console.log(this.state);
     }
     render(){
 
