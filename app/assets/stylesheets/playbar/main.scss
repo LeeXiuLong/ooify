@@ -3,10 +3,20 @@
 }
 
 .play-bar{
-    background-color :rgb(26, 22, 22);
+    background-color :rgb(60, 56, 56);
     width: 100vw;
     height: 9vh;
     position:fixed;
     display:flex;
     justify-content: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.song-runtime{
+    width: 40px;
+    padding-right: 10px;
 }

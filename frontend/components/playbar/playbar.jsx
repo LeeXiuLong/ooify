@@ -40,8 +40,10 @@ class PlayBar extends React.Component{
         }
         return (
             <div className="play-bar">
+                <div className="song-title">{this.props.selectedSong.title}</div>
                 <audio src={this.props.selectedSong.trackUrl} ref={this.audio} alt="current-playing-song"></audio>
                 <button className="play-pause-button" onClick={this.togglePlay}>{this.state.currentlyPlaying ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i>}</button>
+                <div className="song-runtime">{this.props.selectedSong.runtime}</div>
             </div>
         )
     }
