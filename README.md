@@ -73,6 +73,16 @@ Redux
 When the user is navigated to the splash page it allows them to login to their account, 
 or if they don't have an account yet allows them to make one with the login and signup links at the top.
 
+<h2>Sign Up</h2>
+After the user has seen the splash page they will be able to signup for an account on Ooify. The application
+will then check to make sure that the data inserted for signup is valid and then make the account if it is.
+
+<h2>Login</h2>
+If the user has already signed up they will be able to login into their account when visiting the site. This page
+will verify the users credentials with our database.
+
+<img src="http://www.giphy.com/gifs/NJ5tsUwMtrAai8rpIp" alt="">
+
 <h2>Album Index</h2>
 When a user first logs in they will be greeted by a bunch of different features off the bat.
 The first noteable one is the Album index page. It has a list of albums that the user is able to select from
