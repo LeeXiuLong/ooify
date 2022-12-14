@@ -9,5 +9,6 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :session_token, null: false, unique: true
       t.timestamps
     end
+
   end
 end

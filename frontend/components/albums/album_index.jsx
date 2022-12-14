@@ -21,9 +21,11 @@ class AlbumIndex extends React.Component{
 
         let allAlbumItems= [];
         for(let i = 0; i < albumItems.length; i+=6){
-            allAlbumItems.push(<div className="album-item-section">
-                {albumItems.slice(i,i+6)}
-            </div>);
+            allAlbumItems.push(
+                <div className="album-item-section">
+                    {albumItems.slice(i,i+6)}
+                </div>
+            );
         }
 
         return(
